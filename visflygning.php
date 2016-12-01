@@ -17,44 +17,38 @@
 	<br><br>
 </form>
 
-<?php 
+<?php
 
-@$fortsett=$_POST ["fortsett"];
-if ($fortsett)
-{
+@$fortsett = $_POST["fortsett"];
+if ($fortsett) {
 
 
-$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
-$filoperasjon="r"; 
+    $filnavn      = "D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
+    $filoperasjon = "r";
 
-print ("Flygninger som er registret: <br/><br/>");
+    print("Flygninger som er registret: <br/><br/>");
 
-$fil=fopen($filnavn, $filoperasjon); 
+    $fil = fopen($filnavn, $filoperasjon);
 
-print("<table>");
+    print("<table>");
 
-while($linje=fgets($fil)) 
+    while ($linje = fgets($fil)) {
 
-	
-{
-	
-if ($linje !="") 
+        if ($linje != "") {
 
-{
-	
-$del=explode("  ", $linje);
-$flightnr=$del[0];
-$fra=$del[1];
-$til=$del[2];
-$dato=$del[3];
+            $del      = explode("  ", $linje);
+            $flightnr = $del[0];
+            $fra      = $del[1];
+            $til      = $del[2];
+            $dato     = $del[3];
 
-print ("<tr><td>$flightnr</td> <td>$fra</td> <td>$til</td> <td>$dato</td></tr>");
+            print("<tr><td>$flightnr</td> <td>$fra</td> <td>$til</td> <td>$dato</td></tr>");
 
-}
+        }
 
-}
+    }
 
-fclose ($fil);
+    fclose($fil);
 }
 print("</table>");
 ?>
