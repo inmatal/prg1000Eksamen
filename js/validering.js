@@ -6,73 +6,10 @@ function validering() {
 
     var feilmelding = "";
 
-
-        if (!flyplasskode) {
-            feilmelding = feilmelding + "Klassenavn er ikke fylt ut <br />";
-        }
-        if (!flyplasskode) {
-            feilmelding = feilmelding + "flyplasskode er ikke fylt ut <br />";
-        }
-
-
-        if (flyplasskode) {
-            return true;
-            document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
-        } else {
-            document.getElementById("melding1").style.color = "red";
-            document.getElementById("melding1").innerHTML = feilmelding;
-            return false;
-        }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-else if (flyplasskode.length !=3)
+if (flyplasskode.length !=3)
 {
   lovligflyplasskode=false;
-  document.write("flyplasskode består ikke av 3 tegn")
+  feilmelding = feilmelding + "Flyplasskode er ikke fylt ut <br />";
 }
 
 else
@@ -89,10 +26,10 @@ else
   if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "0" || tegn3 > "9")
   {
     lovligflyplasskode=false;
-    document.write("flyplasskode inneholder ulovlig tegn")
+    feilmelding = feilmelding + "Flyplasskode inneholder ulovlige tegn <br />";
   }
 }
-if (lovligflyplasskode)
+if (flyplasskode)
 {
   document.write("flyplasskode er korrekt fylt ut ")
 }

@@ -96,7 +96,6 @@ while($linje=fgets($fil))
 fclose($fil);
 }
 ?>
-<div id="melding2"></div>
 <div id="melding1"></div>
 <div id="melding"></div>
 
