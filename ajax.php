@@ -3,6 +3,9 @@ $delflyplasskode=$_GET["flyplasskode"];
 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
 $filoperasjon="r";
 $fil= fopen($filnavn, $filoperasjon);
+
+print ("<table>");
+
 while ($linje=fgets($fil)) {
     if ($linje !="") {
         $del=explode("  ", $linje);
@@ -18,6 +21,6 @@ while ($linje=fgets($fil)) {
     }
 }
 
+print("</table>");
 fclose($fil);
-
 ?>
