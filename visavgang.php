@@ -8,7 +8,7 @@
 
 <head>
 <title>Søk i klasse</title>
-<script src="hendelser.js"></script>
+<script src="hendelser2.js"></script>
 <script src="validering.js"></script>
 </head>
 
