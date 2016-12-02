@@ -10,7 +10,7 @@
 <body>
 
 <form method="post" onsubmit="return validering2()">
-Klassesøk <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
 <input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
 
@@ -24,34 +24,34 @@ Klassesøk <input type="text" id="klassekode" name="klassekode" onfocus="farge(t
 if ($fortsett)
 {
 
-$klassekode=$_POST["klassekode"];
-$klassekode=trim($klassekode); /*trim fjerner mellomrom først og sist i tekst strengen*/
-$klassekode=strtoupper($klassekode);
-$lovligKlassekode=true;
+$flyplasskode=$_POST["flyplasskode"];
+$flyplasskode=trim($flyplasskode); /*trim fjerner mellomrom først og sist i tekst strengen*/
+$flyplasskode=strtoupper($flyplasskode);
+$lovligflyplasskode=true;
 
-if(!$klassekode)
+if(!$flyplasskode)
 {
-	/*print("klassekode ikke fylt ut");*/
-	$lovligKlassekode=false;
+	/*print("flyplasskode ikke fylt ut");*/
+	$lovligflyplasskode=false;
 }
 
-else if(strlen($klassekode)!=3)
+else if(strlen($flyplasskode)!=3)
 {
-	/*print("klassekode består ikke av 3 tegn");*/
-	$lovligKlassekode=false;
+	/*print("flyplasskode består ikke av 3 tegn");*/
+	$lovligflyplasskode=false;
 }
 
 else
 {
-	$tegn1=$klassekode[0];
-	$tegn2=$klassekode[1];
-	$tegn3=$klassekode[2];
+	$tegn1=$flyplasskode[0];
+	$tegn2=$flyplasskode[1];
+	$tegn3=$flyplasskode[2];
 
 
 	if($tegn1<"A" || $tegn1>"Z" || $tegn2<"A" || $tegn2>"Z" || $tegn3<"1" || $tegn3>"9")
 	{
 		/*print("her er det noe muffins");*/
-		$lovligKlassekode=false;
+		$lovligflyplasskode=false;
 	}
 }
 
@@ -76,7 +76,7 @@ while($linje=fgets($fil))
 	$del=explode(";", $linje);
 	$sokeord=trim($del[3]);
 
-	if($sokeord==$klassekode)
+	if($sokeord==$flyplasskode)
 		{
 
 		$brukernavn=trim($del[0]);
