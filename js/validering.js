@@ -1,18 +1,73 @@
-function fjernMelding()
-{
-	document.getElementById("melding1").innerHTML="";
-}
-
 function validering() {
 
     var flyplasskode = document.getElementById("flyplasskode").value;
     var tegn1, tegn2, tegn3;
     var lovligflyplasskode=true;
-    if (!flyplasskode)
-{
-  lovligflyplasskode=false
-  document.write ("flyplasskode er ikke fylt ut")
+
+    var feilmelding = "";
+
+
+        if (!flyplasskode) {
+            feilmelding = feilmelding + "Klassenavn er ikke fylt ut <br />";
+        }
+        if (!flyplasskode) {
+            feilmelding = feilmelding + "flyplasskode er ikke fylt ut <br />";
+        }
+
+
+        if (flyplasskode) {
+            return true;
+            document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
+        } else {
+            document.getElementById("melding1").style.color = "red";
+            document.getElementById("melding1").innerHTML = feilmelding;
+            return false;
+        }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 else if (flyplasskode.length !=3)
 {
