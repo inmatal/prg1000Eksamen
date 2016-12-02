@@ -33,17 +33,17 @@
         $til=$_POST ["til"];
         $fra=$_POST["fra"];
         if (!$til || !$fra) {
-	           print("Begge feltene må fylles ut");
-           } else {
-	            $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
-	            $filoperasjon="a";
-	            $fil=fopen($filnavn, $filoperasjon);
-	            $linje=$til."  ".$fra."\n";
-	            fwrite($fil,$linje);
-	            print("$til $fra er registrert");
-	            fclose($fil);
-            }
+            print("Begge feltene må fylles ut");
+        } else {
+            $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
+            $filoperasjon="a";
+            $fil=fopen($filnavn, $filoperasjon);
+            $linje=$til."  ".$fra."\n";
+            fwrite($fil, $linje);
+            print("$til $fra er registrert");
+            fclose($fil);
         }
+    }
         ?>
 
         <div id="melding1"></div>

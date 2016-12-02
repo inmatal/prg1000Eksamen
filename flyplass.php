@@ -43,34 +43,26 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 
 @$fortsett=$_POST ["fortsett"];
 
-if ($fortsett)
-{
+if ($fortsett) {
+    $flyplasskode=$_POST ["flyplasskode"];
+    $flyplassnavn=$_POST["flyplassnavn"];
 
-$flyplasskode=$_POST ["flyplasskode"];
-$flyplassnavn=$_POST["flyplassnavn"];
+    if (!$flyplasskode || !$flyplassnavn) {
+        print("Begge feltene må fylles ut");
+    } else {
+        $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
+        $filoperasjon="a";
 
-if (!$flyplasskode || !$flyplassnavn)
+        $fil=fopen($filnavn, $filoperasjon);
 
-{
-	print("Begge feltene må fylles ut");
-}
+        $linje=$flyplasskode."  ".$flyplassnavn."\n";
 
-else
+        fwrite($fil, $linje);
 
-{
-	$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-	$filoperasjon="a";
+        print("$flyplasskode $flyplassnavn er registrert");
 
-	$fil=fopen($filnavn, $filoperasjon);
-
-	$linje=$flyplasskode."  ".$flyplassnavn."\n";
-
-	fwrite($fil,$linje);
-
-	print("$flyplasskode $flyplassnavn er registrert");
-
-	fclose($fil);
-}
+        fclose($fil);
+    }
 }
 ?>
 
