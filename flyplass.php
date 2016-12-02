@@ -19,7 +19,7 @@
 
 
 
-<form method="post" onSubmit="return validering1()">
+<form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
 <span class="tooltiptext">Skriv inn flyplass her</span>

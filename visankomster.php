@@ -9,7 +9,7 @@
    </head>
 <body>
 
-<form method="post" onsubmit="return validering2()">
+<form method="post" onsubmit="return validering()">
 Klassesøk <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
 <input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
