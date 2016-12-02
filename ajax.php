@@ -13,7 +13,7 @@ while ($linje=fgets($fil)) {
 
         $startpos=stripos($fra, $delflyplasskode);
         if ($startpos!==false) {
-            print("<tr><td>$fra $til</tr></td><br>");
+            print("<tr><td>$fra</td><td>$til</tr></td><br>");
         }
     }
 }

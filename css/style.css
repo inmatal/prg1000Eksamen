@@ -20,3 +20,21 @@
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+table {
+    margin: 10px auto;
+}
+
+tr {
+    font-family: arial, sans-serif;
+    font-size: 110%;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
