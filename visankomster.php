@@ -10,7 +10,7 @@
 <body>
 
 <form method="post" onsubmit="return validering()">
-Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" /> <br />
 
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
 <input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
