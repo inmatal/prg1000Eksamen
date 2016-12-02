@@ -90,26 +90,36 @@ function validering1() {
 
 function validering2() {
 
-    var flyplasskode = document.getElementById("flyplasskode").value;
+	var fra = document.getElementById("fra").value;
+	var til = document.getElementById("til").value;
 
 
 
 
-    var feilmelding = "";
+	var feilmelding = "";
 
 
-    if (!flyplasskode) {
-        feilmelding = feilmelding + "Flyplasskode er ikke fylt ut <br />";
-    }
+	if (!fra)
+{
+			feilmelding = feilmelding + "Fra flyplass er ikke fylt ut <br />";
+	}
+
+	if (!til)
+{
+			feilmelding = feilmelding + "Til flyplass er ikke fylt ut <br />";
+	}
 
 
+	if (fra && til)
+{
+			return true;
+			document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
+	}
 
-    if (flyplasskode) {
-        return true;
-        document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
-    } else {
-        document.getElementById("melding1").style.color = "red";
-        document.getElementById("melding1").innerHTML = feilmelding;
-        return false;
-    }
+else
+{
+			document.getElementById("melding1").style.color = "red";
+			document.getElementById("melding1").innerHTML = feilmelding;
+			return false;
+	}
 }
