@@ -4,10 +4,10 @@
 
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Registrer Flyrute</title>
-        <script src="hendelser.js"></script>
-        <script src="validering.js"></script>
+        <script src="js/hendelser.js"></script>
+        <script src="js/validering.js"></script>
     </head>
     <body>
         <form method="post" onSubmit="return validering2()">

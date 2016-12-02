@@ -3,13 +3,13 @@
 <html lang="no">
 
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 
 <head>
 <title>Registrer Flygning</title>
-<script src="hendelser.js"></script>
-<script src="validering.js"></script>
+<script src="js/hendelser.js"></script>
+<script src="js/validering.js"></script>
 
 </head>
 
