@@ -1,8 +1,9 @@
+function validering() {
 
-var flyplasskode=prompt("flyplasskode");
-var tegn1, tegn2, tegn3;
-var lovligflyplasskode=true;
-if (!flyplasskode)
+    var flyplasskode = document.getElementById("flyplasskode").value;
+    var tegn1, tegn2, tegn3;
+    var lovligflyplasskode=true;
+    if (!flyplasskode)
 {
   lovligflyplasskode=false
   document.write ("flyplasskode er ikke fylt ut")
