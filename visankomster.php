@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="stil.css">
    <head>
      <Title>Søk</title>
-	 <script src="js/hendelser.js"></script>
+	 <script src="js/hendelser2.js"></script>
 	  <script src="js/validering.js"></script>
    </head>
 <body>
