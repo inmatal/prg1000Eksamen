@@ -1,4 +1,4 @@
-function fjernMelding()
+function fjernMelding1()
 {
 	document.getElementById("melding1").innerHTML="";
 }
