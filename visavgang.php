@@ -1,60 +1,105 @@
-<!DOCTYPE html>
-
+<!DOCTYPE=HTML>
 <html lang="no">
-
 <meta charset="UTF-8">
-
-<head>
-<title>Vis Flyplasser</title>
-</head>
-
+<link rel="stylesheet" type="text/css" href="stil.css">
+   <head>
+     <Title>Søk</title>
+	 <script src="hendelser.js"></script>
+	  <script src="validering.js"></script>
+   </head>
 <body>
 
-<form method="POST">
+<form method="post" onsubmit="return validering2()">
+Flyplass <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+<input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
+<input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
 
-	<h4>Trykk fortsett for å se avganger </br></h4>
-	<input type="submit" value="Fortsett" id="fortsett" name="fortsett" onmouseover="musover(this)" onmouseout="musout(this)" />
-	<br><br>
+
 </form>
-
 
 <?php
 
-@$fortsett=$_POST ["fortsett"];
+@$fortsett=$_POST["fortsett"];
+
 if ($fortsett)
 {
 
-$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
-$filoperasjon="r"; /*read=lese fra fil*/
+$klassekode=$_POST["klassekode"];
+$klassekode=trim($klassekode); /*trim fjerner mellomrom først og sist i tekst strengen*/
+$klassekode=strtoupper($klassekode);
+$lovligKlassekode=true;
 
-print ("avganger som er registret: <br/><br/>");
-
-$fil=fopen ($filnavn, $filoperasjon); /*Åpne*/
-
-print("<table>");
-
-while($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
-
-
+if(!$klassekode)
 {
+	/*print("klassekode ikke fylt ut");*/
+	$lovligKlassekode=false;
+}
 
-if ($linje !="")
-
+else if(strlen($klassekode)!=3)
 {
+	/*print("klassekode består ikke av 3 tegn");*/
+	$lovligKlassekode=false;
+}
 
-$del=explode("  ", $linje);
-$flyplasskode=$del[0];
-$flyplassnavn=$del[1];
+else
+{
+	$tegn1=$klassekode[0];
+	$tegn2=$klassekode[1];
+	$tegn3=$klassekode[2];
 
-print ("<tr><td>$flyplasskode</td> <td>$flyplassnavn</td></tr>");
+
+	if($tegn1<"A" || $tegn1>"Z" || $tegn2<"A" || $tegn2>"Z" || $tegn3<"1" || $tegn3>"9")
+	{
+		/*print("her er det noe muffins");*/
+		$lovligKlassekode=false;
+	}
+}
+
+
+
+$filnavn="D:\\Sites//home.hbv.no/phptemp/060929/student.txt";
+$filoperasjon="r";
+
+/*print ("<h2> Studenter </h2> </br>");*/
+
+$fil=fopen($filnavn, $filoperasjon);
+
+
+while($linje=fgets($fil))
+
+	{
+
+	if ($linje !="")
+
+	{
+
+	$del=explode(";", $linje);
+	$sokeord=trim($del[3]);
+
+	if($sokeord==$klassekode)
+		{
+
+		$brukernavn=trim($del[0]);
+		$fornavn=trim($del[1]);
+		$etternavn=trim($del[2]);
+		$klasskode=trim($del[3]);
+
+		print("Brukernavn: $brukernavn </br> Navn: $fornavn $etternavn </br> Klasse: $klasskode <br><br>");
+
+		}
+
+
+	}
 
 }
 
+
+fclose($fil);
 }
-fclose ($fil);
-}
-print("</table>");
 ?>
+<div id="melding2"></div>
+<div id="melding1"></div>
+<div id="melding"></div>
 
 </body>
 </html>
