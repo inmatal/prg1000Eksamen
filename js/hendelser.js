@@ -7,7 +7,7 @@ function farge(element)
 	element.style.background="yellow";
 }
 
-function ikkefarge(element) 
+function ikkefarge(element)
 {
 	element.style.background="white";
 }
@@ -34,4 +34,3 @@ function vis (flyplasskode)
 	foresporsel.open("GET","ajax.php?flyplasskode="+flyplasskode);
 	foresporsel.send();
 }
-
