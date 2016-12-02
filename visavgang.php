@@ -10,7 +10,7 @@
 <body>
 
 <form method="post" onsubmit="return validering2()">
-Flyplass <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+Flyplass <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" required/> <br>
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
 <input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
 

@@ -13,7 +13,7 @@
 <form method="POST">
 
 	<h4>Trykk fortsett for å se flyruter </br></h4>
-	<input type="submit" value="Fortsett" id="fortsett" name="fortsett" onmouseover="musover(this)" onmouseout="musout(this)" />
+	<input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
 	<br><br>
 </form>
 
