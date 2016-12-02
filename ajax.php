@@ -1,4 +1,3 @@
-
 <?php
 $delflyplasskode=$_GET["flyplasskode"];
 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
