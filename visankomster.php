@@ -74,7 +74,7 @@ while($linje=fgets($fil))
 
 	{
 
-	$del=explode(";", $linje);
+	$del=explode(" ", $linje);
 	$sokeord=trim($del[2]);
 
 	if($sokeord==$flyplasskode)
