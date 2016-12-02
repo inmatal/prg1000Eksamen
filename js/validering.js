@@ -1,69 +1,37 @@
-function validering() {
 
-    var flyplasskode = document.getElementById("flyplasskode").value;
-		var tegn1, tegn2, tegn3;
-		var lovligflyplasskode=true;
-
-if(!flyplasskode)
+var flyplasskode=prompt("flyplasskode");
+var tegn1, tegn2, tegn3;
+var lovligflyplasskode=true;
+if (!flyplasskode)
 {
-	lovligflyplasskode=false;
-	document.write("Flyplasskode er ikke fylt ut");
+  lovligflyplasskode=false
+  document.write ("flyplasskode er ikke fylt ut")
+}
 
-
-else if(flyplasskode.length !=3)
+else if (flyplasskode.length !=3)
 {
-	lovligflyplasskode=false;
-	document.write("Flyplasskode skal bestå av kun 3 tegn");
+  lovligflyplasskode=false;
+  document.write("flyplasskode består ikke av 3 tegn")
 }
 
 else
 {
-	tegn1=flyplasskode[0]; /*tegn1=flyplasskode.substr(0,1);*/
-	tegn2=flyplasskode[1]; /*tegn2=flyplasskode.substr(1,1);*/
-	tegn3=flyplasskode[2]; /*tegn2=flyplasskode.substr(2,1);*/
+
+  tegn1=flyplasskode[0];
+  tegn2=flyplasskode[1];
+  tegn3=flyplasskode[2];
+
+  /*måte 2:
+  tegn=flyplasskode.substr(0,1);
+  tegn=flyplasskode.substr(1,1);
+  tegn=flyplasskode.substr(2,1);*/
+  if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "0" || tegn3 > "9")
+  {
+    lovligflyplasskode=false;
+    document.write("flyplasskode inneholder ulovlig tegn")
+  }
 }
-}
-if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "A" || tegn3 > "Z")
+if (lovligflyplasskode)
 {
-	lovligflyplasskode=false;
-	document.write("Flyplasskode innholder ulovlige tegn");
-
-}
-
-if (lovligflyplasskode) {
-		return true;
-		document.getElementById("melding").innerHTML = "Alt er riktig fylt ut";
-} else {
-		document.getElementById("melding").style.color = "red";
-		document.getElementById("melding").innerHTML = feilmelding;
-		return false;
-}
-=======
-    var flyplasskode = ("flyplasskode");
-    var tegn1,
-        tegn2,
-        tegn3;
-    var lovligflyplasskode = true;
-
-    if (!flyplasskode) {
-        lovligflyplasskode = false;
-        document.write("Flyplasskode er ikke fylt ut");
-    } else if (flyplasskode.length != 3) {
-        lovligflyplasskode = false;
-        document.write("Flyplasskode skal bestå av kun 3 tegn");
-    } else {
-        tegn1 = flyplasskode[0];/*tegn1=flyplasskode.substr(0,1);*/
-        tegn2 = flyplasskode[1];/*tegn2=flyplasskode.substr(1,1);*/
-        tegn3 = flyplasskode[2];/*tegn2=flyplasskode.substr(2,1);*/
-    }
-
-    if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "A" || tegn3 > "Z") {
-        lovligflyplasskode = false;
-        document.write("Flyplasskode innholder ulovlige tegn");
-    }
-
-    if (lovligflyplasskode) {
-        document.write("Flyplasskode er korrekt fylt ut");
-    }
->>>>>>> origin/master
+  document.write("flyplasskode er korrekt fylt ut ")
 }
