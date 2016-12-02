@@ -1,5 +1,4 @@
 function validering() {
-<<<<<<< HEAD
 
     var flyplasskode = document.getElementById("flyplasskode").value;
 		var tegn1, tegn2, tegn3;
@@ -9,7 +8,7 @@ if(!flyplasskode)
 {
 	lovligflyplasskode=false;
 	document.write("Flyplasskode er ikke fylt ut");
-}
+
 
 else if(flyplasskode.length !=3)
 {
@@ -23,7 +22,7 @@ else
 	tegn2=flyplasskode[1]; /*tegn2=flyplasskode.substr(1,1);*/
 	tegn3=flyplasskode[2]; /*tegn2=flyplasskode.substr(2,1);*/
 }
-
+}
 if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "A" || tegn3 > "Z")
 {
 	lovligflyplasskode=false;

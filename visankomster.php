@@ -83,7 +83,7 @@ while($linje=fgets($fil))
 		$flyplasskode=trim($del[0]);
 		$flyplasskode=trim($del[1]);
 
-		print("Brukernavn: $flyplasskode </br> Navn: $flyplasskode </br><br>");
+		print("Avgang: $flyplasskode </br> Ankomst: $flyplasskode </br><br>");
 
 		}
 
