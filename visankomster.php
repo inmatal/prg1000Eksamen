@@ -58,7 +58,7 @@ else
 
 
 
-$filnavn="D:\\Sites//home.hbv.no/phptemp/060929/student.txt";
+$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
 $filoperasjon="r";
 
 /*print ("<h2> Studenter </h2> </br>");*/
@@ -75,17 +75,15 @@ while($linje=fgets($fil))
 	{
 
 	$del=explode(";", $linje);
-	$sokeord=trim($del[3]);
+	$sokeord=trim($del[2]);
 
 	if($sokeord==$flyplasskode)
 		{
 
-		$brukernavn=trim($del[0]);
-		$fornavn=trim($del[1]);
-		$etternavn=trim($del[2]);
-		$klasskode=trim($del[3]);
+		$flyplasskode=trim($del[0]);
+		$flyplasskode=trim($del[1]);
 
-		print("Brukernavn: $brukernavn </br> Navn: $fornavn $etternavn </br> Klasse: $klasskode <br><br>");
+		print("Brukernavn: $flyplasskode </br> Navn: $flyplasskode </br><br>");
 
 		}
 
