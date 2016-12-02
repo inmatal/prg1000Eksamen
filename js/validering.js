@@ -7,7 +7,7 @@ function validering() {
 
 if (flyplasskode.length !=3)
 {
-  feilmelding = feilmelding + "Flyplasskode er ikke fylt ut <br />";
+  feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig <br />";
 }
 if
 {
