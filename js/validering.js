@@ -8,6 +8,7 @@ function validering() {
 if (flyplasskode.length !=3)
 {
   feilmelding = feilmelding + "Flyplasskode er ikke fylt ut <br />";
+  document.getElementById("melding").innerHTML="Flyplasskode er ikke fylt ut";
 }
 if
 {
@@ -28,9 +29,9 @@ if
 
 if (klassenavn && klassekode) {
     return true;
-    document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
+    document.getElementById("melding").innerHTML = "Alt er riktig fylt ut";
 } else {
-    document.getElementById("melding1").style.color = "red";
-    document.getElementById("melding1").innerHTML = feilmelding;
+    document.getElementById("melding").style.color = "red";
+    document.getElementById("melding").innerHTML = feilmelding;
     return false;
 }
