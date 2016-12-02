@@ -4,118 +4,43 @@ function fjernMelding()
 }
 
 
-
-function validering()
-{
-	var flightnr = document.getElementById("flightnr").value;
-	var fra = document.getElementById("fra").value;
-	var til = document.getElementById("til").value;
-	var dato = document.getElementById("dato").value;
-	
-	
-	
-	var feilmelding="";
-	
-	if (!flightnr)
-	{
-		feilmelding=feilmelding+"Flightnr er ikke fylt ut</br>";
-	}
-	
-	if (!fra)
-	{
-		feilmelding=feilmelding+"Fra flyplass er ikke fylt ut</br>";
-	}
-	
-	if (!til)
-	{
-		feilmelding=feilmelding+"Til flyplass er ikke fylt ut</br>";
-	}
-	
-	if (!dato)
-	{
-		feilmelding=feilmelding+"Dato er ikke fylt ut</br>";
-	}
-	
-	if (flightnr && fra && til && dato)
-	{
-        return true;
-        document.getElementById("melding1").innerHTML = "Informasjonen er registrert";
-    } 
-	
-	else
-	{
-        document.getElementById("melding1").style.color = "red";
-        document.getElementById("melding1").innerHTML = feilmelding;
-        return false;
-    }
-}
-
-
-
 function validering1() {
 
-    var flyplasskode = document.getElementById("flyplasskode").value;
-    var flyplassnavn = document.getElementById("flyplassnavn").value;
+	var flyplasskode=("flyplasskode");
+	var tegn1, tegn2, tegn3;
+	var lovligFlyplasskode=true;
 
-
-
-
-    var feilmelding = "";
-
-
-    if (!flyplasskode)
+	if(!flyplasskode)
 	{
-        feilmelding = feilmelding + "Flyplasskode er ikke fylt ut <br />";
-    }
+		lovligFlyplasskode=false;
+		document.write("Flyplasskode er ikke fylt ut");
+	}
 
-    if (!flyplassnavn)
+	else if(flyplasskode.length !=3)
 	{
-        feilmelding = feilmelding + "Flyplassnavn er ikke fylt ut <br />";
-    }
+		lovligFlyplasskode=false;
+		document.write("Flyplasskode skal bestå av 3 store bokstaver");
+	}
 
-
-    if (flyplasskode && flyplassnavn)
-	{
-        return true;
-        document.getElementById("melding1").innerHTML = "Informasjonen er registrert";
-    } 
-	
 	else
 	{
-        document.getElementById("melding1").style.color = "red";
-        document.getElementById("melding1").innerHTML = feilmelding;
-        return false;
-    }
-}
+		tegn1=flyplasskode[0]; /*tegn1=flyplasskode.substr(0,1);*/
+		tegn2=flyplasskode[1]; /*tegn2=flyplasskode.substr(1,1);*/
+		tegn3=flyplasskode[2]; /*tegn2=flyplasskode.substr(2,1);*/
+	}
 
-function validering2() {
-
-    var fra = document.getElementById("fra").value;
-    var til = document.getElementById("til").value;
-
-
-
-
-    var feilmelding = "";
-
-
-    if (!fra)
+	if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "A" || tegn3 > "Z")
 	{
-        feilmelding = feilmelding + "Fra flyplass er ikke fylt ut <br />";
-    }
+		lovligFlyplasskode=false;
+		document.write("Flyplasskode skal bestå av 3 store bokstaver");
+	}
 
-    if (!til)
+	if(lovligFlyplasskode)
 	{
-        feilmelding = feilmelding + "Til flyplass er ikke fylt ut <br />";
-    }
+		document.write("Flyplasskode er korrekt fylt ut");
+	}
 
 
-    if (fra && til)
-	{
-        return true;
-        document.getElementById("melding1").innerHTML = "Informasjonen er registrert";
-    } 
-	
 	else
 	{
         document.getElementById("melding1").style.color = "red";
