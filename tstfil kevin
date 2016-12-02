@@ -1,1 +1,34 @@
-test
+
+var klassekode=prompt("Klassekode");
+var tegn1, tegn2, tegn3;
+var lovligKlassekode=true;
+
+if(!klassekode)
+{
+	lovligKlassekode=false;
+	document.write("Klassekode er ikke fylt ut");
+}
+
+else if(klassekode.length !=3)
+{
+	lovligKlassekode=false;
+	document.write("Klassekode skal bestå av kun 3 tegn");
+}
+
+else
+{
+	tegn1=klassekode[0]; /*tegn1=klassekode.substr(0,1);*/
+	tegn2=klassekode[1]; /*tegn2=klassekode.substr(1,1);*/
+	tegn3=klassekode[2]; /*tegn2=klassekode.substr(2,1);*/
+}
+
+if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "0" || tegn3 > "9")
+{
+	lovligKlassekode=false;
+	document.write("Klassekode innholder ulovlige tegn");
+}
+
+if(lovligKlassekode)
+{
+	document.write("Klassekode er korrekt fylt ut");
+}
