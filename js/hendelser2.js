@@ -4,7 +4,7 @@
 
 function farge(element)
 {
-	element.style.background="sightskyBlue";
+	element.style.background="#87CEFA";
 }
 
 function ikkefarge(element)
