@@ -19,22 +19,22 @@
 
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
-Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)"/>
+Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>
 <div class="tooltip">
-Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)"/>
+Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>
 <div class="tooltip">
-Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)"/>
+Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>
 <div class="tooltip">
-Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)"/>
+Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>

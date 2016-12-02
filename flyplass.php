@@ -21,12 +21,12 @@
 
 <form method="post" onSubmit="return validering1()">
 <div class="tooltip">
-Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)"onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
+Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>
 <div class="tooltip">
-Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)"/>
+Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplass her</span>
 </div>
 <br>

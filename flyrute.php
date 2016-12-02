@@ -12,12 +12,12 @@
     <body>
         <form method="post" onSubmit="return validering2()">
             <div class="tooltip">
-                Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)"onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)"/>
+                Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
                 <span class="tooltiptext">Skriv inn flyplass her</span>
             </div>
             <br>
             <div class="tooltip">
-                Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)"/>
+                Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
                 <span class="tooltiptext">Skriv inn flyplass her</span>
             </div>
             <br>
