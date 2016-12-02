@@ -36,32 +36,8 @@ if(!$flyplasskode)
 	$lovligflyplasskode=false;
 }
 
-else if(strlen($flyplasskode)!=3)
-{
-	/*print("flyplasskode består ikke av 3 tegn");*/
-	$lovligflyplasskode=false;
-}
-
-else
-{
-	$tegn1=$flyplasskode[0];
-	$tegn2=$flyplasskode[1];
-	$tegn3=$flyplasskode[2];
-
-
-	if($tegn1<"A" || $tegn1>"Z" || $tegn2<"A" || $tegn2>"Z" || $tegn3<"1" || $tegn3>"9")
-	{
-		/*print("her er det noe muffins");*/
-		$lovligflyplasskode=false;
-	}
-}
-
-
-
 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
 $filoperasjon="r";
-
-/*print ("<h2> Studenter </h2> </br>");*/
 
 $fil=fopen($filnavn, $filoperasjon);
 
