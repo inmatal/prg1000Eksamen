@@ -1,3 +1,10 @@
+function fjernMelding() {
+    document.getElementById("melding1").innerHTML = "";
+}
+
+function fjernMelding1() {
+    document.getElementById("melding1").innerHTML = "";
+}
 
 function validering1() {
 
@@ -10,13 +17,13 @@ function validering1() {
     if(!flyplasskode)
     {
     	lovligFlyplasskode=false;
-    	document.write("Flyplasskode er ikke fylt ut");
+    	feilmelding = feilmelding + "Flyplasskode er ikke fylt ut";
     }
 
     else if(flyplasskode.length !=3)
     {
     	lovligFlyplasskode=false;
-    	document.write("Flyplasskode skal bestå av kun 3 tegn");
+    	feilmelding = feilmelding + "Flyplasskode skal bestå av kun 3 tegn";
     }
 
     else
@@ -29,12 +36,12 @@ function validering1() {
     if (tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "A" || tegn3 > "Z")
     {
     	lovligFlyplasskode=false;
-    	document.write("Flyplasskode innholder ulovlige tegn");
+    	feilmelding = feilmelding + "Flyplasskode innholder ulovlige tegn";
     }
 
     if(lovligFlyplasskode)
     {
-    	document.write("Flyplasskode er korrekt fylt ut");
+    	feilmelding = feilmelding + "Flyplasskode er korrekt fylt ut";
     }
 
     if (flyplasskode) {
