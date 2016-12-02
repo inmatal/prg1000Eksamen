@@ -1,7 +1,7 @@
 //////Farge i feltet///////
 
 function farge(element) {
-    element.style.background = "yellow";
+    element.style.background = "#B0E0E6";
 }
 
 function ikkefarge(element) {
