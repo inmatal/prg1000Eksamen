@@ -8,7 +8,7 @@
 
 <head>
 <title>avganger</title>
-<script src="js/hendelser.js"></script>
+<script src="js/hendelser2.js"></script>
 <script src="js/validering.js"></script>
 </head>
 
