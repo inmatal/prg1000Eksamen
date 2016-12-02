@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="no">
@@ -34,11 +35,6 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
 
 </form>
-
-
-</br>
-
-
 <?php
 
 @$fortsett=$_POST ["fortsett"];
@@ -53,6 +49,20 @@ if ($fortsett) {
         $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
         $filoperasjon="a";
 
+        $fileContents = file_get_contents($filnavn);
+
+        $lines = explode("\n", $fileContents);
+
+        $existsAlready = false;
+        $errorMessage = "";
+        foreach ($lines as $line) {
+            if ($line == $flyplasskode) {
+                $existsAlready = true;
+                $errorMessage = "Flyplasskoden eksisterer!";
+                break;
+            }
+        }
+
         $fil=fopen($filnavn, $filoperasjon);
 
         $linje=$flyplasskode."  ".$flyplassnavn."\n";
@@ -65,6 +75,9 @@ if ($fortsett) {
     }
 }
 ?>
+
+</br>
+
 <div id="melding1"></div>
 <div id="melding"></div>
 
