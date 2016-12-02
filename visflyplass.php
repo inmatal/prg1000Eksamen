@@ -18,40 +18,34 @@
 </form>
 
 
-<?php 
+<?php
 
 @$fortsett=$_POST ["fortsett"];
-if ($fortsett)
-{
+if ($fortsett) {
+    $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
+    $filoperasjon="r"; /*read=lese fra fil*/
 
-$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-$filoperasjon="r"; /*read=lese fra fil*/
+print("Flyplasser som er registret: <br/><br/>");
 
-print ("Flyplasser som er registret: <br/><br/>");
-
-$fil=fopen ($filnavn, $filoperasjon); /*Åpne*/
+    $fil=fopen($filnavn, $filoperasjon); /*Åpne*/
 
 print("<table>");
 
-while($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
+    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
 
-	
-{
-	
-if ($linje !="") 
 
 {
-	
-$del=explode("  ", $linje);
-$flyplasskode=$del[0];
-$flyplassnavn=$del[1];
 
-print ("<tr><td>$flyplasskode</td> <td>$flyplassnavn</td></tr>");
+if ($linje !="") {
+    $del=explode("  ", $linje);
+    $flyplasskode=$del[0];
+    $flyplassnavn=$del[1];
 
+    print("<tr><td>$flyplasskode</td> <td>$flyplassnavn</td></tr>");
 }
 
 }
-fclose ($fil);
+    fclose($fil);
 }
 print("</table>");
 ?>

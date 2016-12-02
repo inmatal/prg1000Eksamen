@@ -48,56 +48,50 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 
 <?php
 
-	@$fortsett=$_POST ["fortsett"];
-	if ($fortsett)
-	{
-	    $flightnr=$_POST["flightnr"];
-	    $fra=$_POST["fra"];
-	    $til= $_POST["til"];
-	    $dato=$_POST["dato"];
+    @$fortsett=$_POST ["fortsett"];
+    if ($fortsett) {
+        $flightnr=$_POST["flightnr"];
+        $fra=$_POST["fra"];
+        $til= $_POST["til"];
+        $dato=$_POST["dato"];
 
-	    if (!$flightnr)
-	        {
-	        print ("Flightnr må fylles ut<br>");
-	        }
+        if (!$flightnr) {
+            print("Flightnr må fylles ut<br>");
+        }
 
-		if (!$fra)
-			{
-			print ("Fra må fylles ut<br>");
-			}
+        if (!$fra) {
+            print("Fra må fylles ut<br>");
+        }
 
-		if (!$til)
-			{
-			print ("Til må fylles ut<br>");
-			}
+        if (!$til) {
+            print("Til må fylles ut<br>");
+        }
 
-		if (!$dato)
-			{
-			print ("Dato må fylles ut<br>");
-			}
+        if (!$dato) {
+            print("Dato må fylles ut<br>");
+        }
 
 
 
 
-	    if ($flightnr && $fra && $til && $dato)
-	    {
-	    $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
-	    $filoperasjon="a";
+        if ($flightnr && $fra && $til && $dato) {
+            $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
+            $filoperasjon="a";
 
 
-	    $fil= fopen ($filnavn, $filoperasjon);
-	    $linje = $flightnr ."  ". $fra ."  ". $til."  ". $dato.    "\n";
+            $fil= fopen($filnavn, $filoperasjon);
+            $linje = $flightnr ."  ". $fra ."  ". $til."  ". $dato.    "\n";
 
 
-	    fwrite ($fil, $linje) ;
+            fwrite($fil, $linje) ;
 
 
-	    print ("$flightnr $fra $til $dato er nå registrert");
+            print("$flightnr $fra $til $dato er nå registrert");
 
-		fclose ($fil);
-	    }
-		}
-	    ?>
+            fclose($fil);
+        }
+    }
+        ?>
 <div id="melding"></div>
 <div id="melding1"></div>
 <div id="melding2"></div>

@@ -21,8 +21,6 @@ test
 
 @$fortsett = $_POST["fortsett"];
 if ($fortsett) {
-
-
     $filnavn      = "D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
     $filoperasjon = "r";
 
@@ -33,9 +31,7 @@ if ($fortsett) {
     print("<table>");
 
     while ($linje = fgets($fil)) {
-
         if ($linje != "") {
-
             $del      = explode("  ", $linje);
             $flightnr = $del[0];
             $fra      = $del[1];
@@ -43,9 +39,7 @@ if ($fortsett) {
             $dato     = $del[3];
 
             print("<tr><td>$flightnr</td> <td>$fra</td> <td>$til</td> <td>$dato</td></tr>");
-
         }
-
     }
 
     fclose($fil);
