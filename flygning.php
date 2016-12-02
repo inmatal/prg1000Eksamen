@@ -91,10 +91,9 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
             fclose($fil);
         }
     }
-        ?>
-<div id="melding"></div>
+?>
 <div id="melding1"></div>
-<div id="melding2"></div>
+<div id="melding"></div>
 
 </body>
 </html>

@@ -65,7 +65,8 @@ if ($fortsett) {
     }
 }
 ?>
-
+<div id="melding1"></div>
+<div id="melding"></div>
 
 </body>
 </html>
