@@ -9,8 +9,13 @@
    </head>
 <body>
 
+<<<<<<< HEAD
 <form method="post" onsubmit="return validering2()">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+=======
+<form method="post" onsubmit="return validering()">
+Klassesøk <input type="text" id="klassekode" name="klassekode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" required/> <br />
+>>>>>>> origin/master
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
 <input type="reset" value="nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
 
