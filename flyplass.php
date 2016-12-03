@@ -37,9 +37,6 @@
 
 
 
-<footer>
-<h4>Laget av gruppe 6, som består av:</h4>
-</footer>
 
 
 
@@ -106,6 +103,10 @@ if ($fortsett) {
 
 <div id="melding1"></div>
 <div id="melding"></div>
+
+<footer>
+<h4>Laget av gruppe 6, som består av:</h4>
+</footer>
 
 </body>
 </html>
