@@ -81,7 +81,7 @@ if ($fortsett) {
             if ($line == $flyplasskode) {
                 $existsAlready = true;
                 $errorMessage = "Flyplasskoden eksisterer!";
-                //break;
+                break;
             } else {
                 $fil=fopen($filnavn, $filoperasjon);
                 $linje=$flyplasskode."  ".$flyplassnavn."\n";
@@ -92,7 +92,6 @@ if ($fortsett) {
         }
     }
 }
-
 
 
 
