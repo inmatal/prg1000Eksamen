@@ -59,21 +59,24 @@ if ($fortsett) {
             if ($line == $flyplasskode) {
                 $existsAlready = true;
                 $errorMessage = "Flyplasskoden eksisterer!";
-                break;
+                //break;
+            } else {
+                $fil=fopen($filnavn, $filoperasjon);
+                $linje=$flyplasskode."  ".$flyplassnavn."\n";
+                fwrite($fil, $linje);
+                print("$flyplasskode $flyplassnavn er registrert");
+                fclose($fil);
             }
         }
-
-        $fil=fopen($filnavn, $filoperasjon);
-
-        $linje=$flyplasskode."  ".$flyplassnavn."\n";
-
-        fwrite($fil, $linje);
-
-        print("$flyplasskode $flyplassnavn er registrert");
-
-        fclose($fil);
     }
 }
+
+foreach ($variable as $key => $value) {
+    # code...
+}
+
+
+
 ?>
 
 </br>
