@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <form method="post" onSubmit="return validering()">
+    <form method="post" onSubmit="return validering2()">
         Avganger <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
         </br></br>
-        <input type="submit" value="Søk" id="fortsett" name="fortsett" onClick="fjernMelding2()"/>
+        <input type="submit" value="Søk" id="fortsett" name="fortsett"/>
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
     </form>
     </br>
