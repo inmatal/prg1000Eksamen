@@ -47,10 +47,10 @@
 
     if (lovligfra) {
         return true;
-        document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
+        document.getElementById("melding3").innerHTML = "Alt er riktig fylt ut";
     } else {
-        document.getElementById("melding1").style.color = "red";
-        document.getElementById("melding1").innerHTML = feilmelding;
+        document.getElementById("melding3").style.color = "red";
+        document.getElementById("melding3").innerHTML = feilmelding;
         return false;
     }
 
@@ -75,10 +75,10 @@
 
     if (lovligtil) {
         return true;
-        document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
+        document.getElementById("melding2").innerHTML = "Alt er riktig fylt ut";
     } else {
-        document.getElementById("melding1").style.color = "red";
-        document.getElementById("melding1").innerHTML = feilmelding;
+        document.getElementById("melding2").style.color = "red";
+        document.getElementById("melding2").innerHTML = feilmelding;
         return false;
     }
 

@@ -98,6 +98,8 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 
 <div id="melding2"></div>
 
+<div id="melding3"></div>
+
 
 
 
