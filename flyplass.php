@@ -80,7 +80,7 @@ if ($fortsett) {
         foreach ($lines as $line) {
             if ($line == $flyplasskode) {
                 $existsAlready = true;
-                $errorMessage = "Flyplasskoden eksisterer!";
+                $errorMessage = "<br>Flyplasskoden eksisterer!";
                 break;
             } else {
                 $fil=fopen($filnavn, $filoperasjon);
