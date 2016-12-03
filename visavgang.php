@@ -8,14 +8,14 @@
 
 <head>
     <title>Avganger</title>
-    <script src="js/hendelser.js"></script>
+    <script src="js/hendelser2.js"></script>
     <script src="js/validering.js"></script>
 </head>
 
 <body>
     <div class="tooltip">
     <form method="post" onSubmit="return validering()">
-        Avganger <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
+        Avganger <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
         <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
         </div>
         </br></br>
