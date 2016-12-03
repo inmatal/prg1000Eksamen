@@ -1,7 +1,7 @@
 function validering() {
     var flyplasskode = document.getElementById("flyplasskode").value;
-    var fra = document.getElementById("fra").value;
-    var til = document.getElementById("til").value;
+    /*var fra = document.getElementById("fra").value;
+    var til = document.getElementById("til").value;*/
     var tegn1,
         tegn2,
         tegn3;
@@ -14,7 +14,7 @@ function validering() {
     if (!regexToUse.test(flyplasskode)) {
         lovligflyplasskode = false;
         feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
-    }
+    }/*
     if (!regexToUse.test(fra)) {
         lovligflyplasskode = false;
         feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
@@ -22,7 +22,7 @@ function validering() {
     if (!regexToUse.test(til)) {
         lovligflyplasskode = false;
         feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
-    }
+    }*/
 
     if (lovligflyplasskode) {
         return true;
