@@ -10,7 +10,7 @@
         <script src="js/validering.js"></script>
     </head>
     <body>
-        <form method="post" onSubmit="return validering()">
+        <form method="post" onSubmit="return validering1()">
             <div class="tooltip">
                 Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>

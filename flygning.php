@@ -17,7 +17,7 @@
 
 
 
-<form method="post" onSubmit="return validering()">
+<form method="post" onSubmit="return validering1()">
 <div class="tooltip">
 Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flightnr her</span>
