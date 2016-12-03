@@ -31,17 +31,17 @@ print("Flyruter som er registret: <br/><br/>");
 
 print("<table>");
 
-    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
+    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt ankomst den ikke finner mer, da blir betingelsen usann og stopper*/
 
 
 {
 
 if ($linje !="") {
     $del=explode("  ", $linje);
-    $til=$del[0];
+    $ankomst=$del[0];
     $avganger=$del[1];
 
-    print("<tr><td>$til</td> <td>$avganger</td></tr>");
+    print("<tr><td>$ankomst</td> <td>$avganger</td></tr>");
 }
 
 }

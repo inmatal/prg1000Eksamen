@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-test
+
 <html lang="no">
 
 <meta charset="UTF-8">

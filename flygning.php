@@ -24,12 +24,12 @@ Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" 
 </div>
 <br>
 <div class="tooltip">
-Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+avganger flyplass <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
-Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+ankomst flyplass <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
@@ -39,7 +39,7 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 </div>
 <br>
 <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+<input type="reset" value="Nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/>
 
 </form>
 
@@ -51,20 +51,20 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
     @$fortsett=$_POST ["fortsett"];
     if ($fortsett) {
         $flightnr=$_POST["flightnr"];
-        $fra=$_POST["fra"];
-        $til= $_POST["til"];
+        $avganger=$_POST["avganger"];
+        $ankomst= $_POST["ankomst"];
         $dato=$_POST["dato"];
 
         if (!$flightnr) {
             print("Flightnr må fylles ut<br>");
         }
 
-        if (!$fra) {
-            print("Fra må fylles ut<br>");
+        if (!$avganger) {
+            print("avganger må fylles ut<br>");
         }
 
-        if (!$til) {
-            print("Til må fylles ut<br>");
+        if (!$ankomst) {
+            print("ankomst må fylles ut<br>");
         }
 
         if (!$dato) {
@@ -74,19 +74,19 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 
 
 
-        if ($flightnr && $fra && $til && $dato) {
+        if ($flightnr && $avganger && $ankomst && $dato) {
             $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
             $filoperasjon="a";
 
 
             $fil= fopen($filnavn, $filoperasjon);
-            $linje = $flightnr ."  ". $fra ."  ". $til."  ". $dato.    "\n";
+            $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
 
 
             fwrite($fil, $linje) ;
 
 
-            print("$flightnr $fra $til $dato er nå registrert");
+            print("$flightnr $avganger $ankomst $dato er nå registrert");
 
             fclose($fil);
         }

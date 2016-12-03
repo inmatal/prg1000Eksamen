@@ -35,7 +35,7 @@ function validering() {
 
   function validering1() {
       var avganger = document.getElementById("avganger").value;
-      var til = document.getElementById("til").value;
+      var ankomst = document.getElementById("ankomst").value;
       var tegn1,
           tegn2,
           tegn3;
@@ -49,9 +49,9 @@ function validering() {
           lovligavganger = false;
           feilmelding = feilmelding + "avganger er ikke fylt ut riktig<br />";
       }
-      if (!regexToUse.test(til)) {
+      if (!regexToUse.test(ankomst)) {
           lovligavganger = false;
-          feilmelding = feilmelding + "Til er ikke fylt ut riktig<br />";
+          feilmelding = feilmelding + "ankomst er ikke fylt ut riktig<br />";
       }
 
 
@@ -67,7 +67,7 @@ function validering() {
       if (avganger) {
           document.write("Flyplasskode er korrekt fylt ut ")
       }
-      if (til) {
+      if (ankomst) {
           document.write("Flyplasskode er korrekt fylt ut ")
       }
     }

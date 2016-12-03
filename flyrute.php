@@ -17,12 +17,12 @@
             </div>
             <br>
             <div class="tooltip">
-                Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+                ankomst flyplass <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
             </div>
             <br>
             <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
-            <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+            <input type="reset" value="Nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/>
         </form>
     </br>
 
@@ -30,17 +30,17 @@
     @$fortsett=$_POST ["fortsett"];
 
     if ($fortsett) {
-        $til=$_POST ["til"];
+        $ankomst=$_POST ["ankomst"];
         $avganger=$_POST["avganger"];
-        if (!$til || !$avganger) {
+        if (!$ankomst || !$avganger) {
             print("Begge feltene må fylles ut");
         } else {
             $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
             $filoperasjon="a";
             $fil=fopen($filnavn, $filoperasjon);
-            $linje=$til."  ".$avganger."\n";
+            $linje=$ankomst."  ".$avganger."\n";
             fwrite($fil, $linje);
-            print("$til $avganger er registrert");
+            print("$ankomst $avganger er registrert");
             fclose($fil);
         }
     }
