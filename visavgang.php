@@ -21,6 +21,9 @@
     </form>
     </br>
 
+    <div id="melding1"></div>
+    <div id="melding"></div>
+
     <?php
 /*
     if (isset($_POST["fortsett"])) {
@@ -67,7 +70,5 @@
     }
 
     ?>
-    <div id="melding1"></div>
-    <div id="melding"></div>
 </body>
 </html>
