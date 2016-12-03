@@ -7,9 +7,9 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <head>
-<title>avganger</title>
-<script src="js/hendelser2.js"></script>
-<script src="js/validering.js"></script>
+    <title>avganger</title>
+    <script src="js/hendelser2.js"></script>
+    <script src="js/validering.js"></script>
 </head>
 
 <body>
@@ -23,8 +23,27 @@
 
     <?php
 
-    @$fortsett=$_POST ["fortsett"];
-    if ($fortsett) {
+    if (isset($_POST["fortsett"])) {
+        $avganger=$_POST["avganger"];
+        $avganger=trim($avganger); /*trim fjerner mellomrom først og sist i tekst strengen*/
+        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flyplass.txt";
+        $filoperasjon="r";
+        $fil=fopen($filnavn, $filoperasjon);
+        while($linje=fgets($fil)) {
+            if ($linje !="") {
+                $del = explode("  ", $linje);
+                $flyplasskode = trim($del[0]);
+                if(strtoupper($fra) == strtoupper($avganger)) {
+                    $flyplass = trim($del[1]);
+                    print("Avganger fra flyplass $flyplass");
+                }
+            }
+        }
+        fclose($fil);
+
+    }
+    if (isset($_POST["fortsett"])) {
+        print("<table>");
         $avganger=$_POST["avganger"];
         $avganger=trim($avganger); /*trim fjerner mellomrom først og sist i tekst strengen*/
         $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygnin.txt";
@@ -43,7 +62,9 @@
             }
         }
         fclose($fil);
+        print("</table>");
     }
+
     ?>
 
     <div id="melding2"></div>
