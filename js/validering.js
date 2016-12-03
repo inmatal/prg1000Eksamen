@@ -55,15 +55,13 @@ function validering() {
       }
 
 
-      if (lovligfra) {
+      if (lovligFra) {
           return true;
           document.getElementById("melding1").innerHTML = "Alt er riktig fylt ut";
       } else {
           document.getElementById("melding1").style.color = "red";
           document.getElementById("melding1").innerHTML = feilmelding;
           return false;
-      }
-
       }
 
       if (fra) {
