@@ -35,13 +35,6 @@
   </ul>
 </div>
 
-
-
-
-
-
-
-
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
@@ -68,7 +61,7 @@ if ($fortsett) {
     if (!$flyplasskode || !$flyplassnavn) {
         print("Begge feltene må fylles ut");
     } else {
-      $errorMessage = "";
+        $errorMessage = "";
         $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
         $filoperasjon="a";
 
@@ -78,7 +71,7 @@ if ($fortsett) {
 
         $existsAlready = false;
         foreach ($lines as $line) {
-          $splitLine = explode(" ", $line);
+            $splitLine = explode(" ", $line);
             if ($splitLine[0] === $flyplasskode) {
                 $errorMessage = $flyplasskode."Flyplasskoden eksisterer!";
                 break;
@@ -86,12 +79,12 @@ if ($fortsett) {
         }
 
         if (count($errorMessage) > 0) {
-          print($errorMessage);
+            print($errorMessage);
         } else {
-          $linje=$flyplasskode."  ".$flyplassnavn."\n";
-          fwrite($fil, $linje);
-          print("$flyplasskode $flyplassnavn er registrert");
-          fclose($fil);
+            $linje=$flyplasskode."  ".$flyplassnavn."\n";
+            fwrite($fil, $linje);
+            print("$flyplasskode $flyplassnavn er registrert");
+            fclose($fil);
         }
     }
 }
