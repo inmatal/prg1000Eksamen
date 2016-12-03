@@ -9,7 +9,7 @@
 <head>
     <title>avganger</title>
     <script src="js/hendelser2.js"></script>
-    <script src="js/validering.js"></script>
+    <script src="js/validering1.js"></script>
 </head>
 
 <body>
@@ -22,11 +22,11 @@
     </br>
 
     <?php
-
+/*
     if (isset($_POST["fortsett"])) {
         $avganger=$_POST["avganger"];
         $avganger=trim($avganger); /*trim fjerner mellomrom først og sist i tekst strengen*/
-        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flyplass.txt";
+/*        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flyplass.txt";
         $filoperasjon="r";
         $fil=fopen($filnavn, $filoperasjon);
         while($linje=fgets($fil)) {
@@ -42,22 +42,23 @@
         fclose($fil);
 
     }
+*/
     if (isset($_POST["fortsett"])) {
         print("<table>");
         $avganger=$_POST["avganger"];
         $avganger=trim($avganger); /*trim fjerner mellomrom først og sist i tekst strengen*/
-        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygnin.txt";
+        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
         $filoperasjon="r";
         $fil=fopen($filnavn, $filoperasjon);
         while($linje=fgets($fil)) {
             if ($linje !="") {
                 $del=explode("  ", $linje);
-                $avganger=trim(strtoupper($del[1]);
+                $avganger=trim(strtoupper($del[1]));
                 if($avganger==$avganger) {
                     $flightnr=trim(strtoupper($del[0]));
                     $ankomst=trim(strtoupper($del[2]));
                     $dato=trim(strtoupper($del[3]));
-                    print("<tr><td>$ankomst</td><td>$filghtnr</td><td>$dato</td></tr>");
+                    print("<tr><td>$ankomst</td><td>$flightnr</td><td>$dato</td></tr>");
                 }
             }
         }
