@@ -47,15 +47,6 @@ function validering1() {
         feilmelding = feilmelding + "Fra er ikke fylt ut riktig<br />";
     }
 
-    if (lovligfra) {
-        return true;
-        document.getElementById("melding3").innerHTML = "Alt er riktig fylt ut";
-    } else {
-        document.getElementById("melding3").style.color = "red";
-        document.getElementById("melding3").innerHTML = feilmelding;
-        return false;
-    }
-
     if (fra) {
         document.write("Fra er korrekt fylt ut ")
     }
@@ -65,7 +56,7 @@ function validering1() {
         feilmelding = feilmelding + "Til er ikke fylt ut riktig<br />";
     }
 
-    if (lovligtil) {
+    if (lovligfra && lovligtil) {
         return true;
         document.getElementById("melding2").innerHTML = "Alt er riktig fylt ut";
     } else {
@@ -74,7 +65,7 @@ function validering1() {
         return false;
     }
 
-    if (til) {
+    if (fra && til) {
         document.write("Til er korrekt fylt ut ")
     }
 
