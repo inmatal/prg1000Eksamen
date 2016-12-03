@@ -48,7 +48,8 @@
         fclose($fil);
 
     }
-*/
+    */
+    
     if (isset($_POST["fortsett"])) {
         print("<table>");
         $sokeord=$_POST["flyplasskode"];

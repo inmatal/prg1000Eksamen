@@ -48,11 +48,12 @@
         fclose($fil);
 
     }
-*/
+    */
+
     if (isset($_POST["fortsett"])) {
         print("<table>");
         $sokeord=$_POST["flyplasskode"];
-        $sokeord=trim(strtoupper($ankomst)); /*trim fjerner mellomrom først og sist i tekst strengen*/
+        $sokeord=trim(strtoupper($sokeord)); /*trim fjerner mellomrom først og sist i tekst strengen*/
         $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
         $filoperasjon="r";
         $fil=fopen($filnavn, $filoperasjon);
