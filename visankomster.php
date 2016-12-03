@@ -51,8 +51,8 @@
 */
     if (isset($_POST["fortsett"])) {
         print("<table>");
-        $avganger=$_POST["flyplasskode"];
-        $avganger=trim($ankomst); /*trim fjerner mellomrom først og sist i tekst strengen*/
+        $sokeord=$_POST["flyplasskode"];
+        $sokeord=trim(strtoupper($ankomst)); /*trim fjerner mellomrom først og sist i tekst strengen*/
         $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
         $filoperasjon="r";
         $fil=fopen($filnavn, $filoperasjon);
@@ -60,7 +60,7 @@
             if ($linje !="") {
                 $del=explode("  ", $linje);
                 $ankomst=trim(strtoupper($del[2]));
-                if($ankomst==$ankomst) {
+                if($ankomst==$sokeord) {
                     $flightnr=trim(strtoupper($del[0]));
                     $avganger=trim(strtoupper($del[1]));
                     $dato=trim(strtoupper($del[3]));
