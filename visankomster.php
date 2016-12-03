@@ -15,7 +15,7 @@ Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="f
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
-<input type="reset" value="nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/> <br />
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
 
 
 </form>
