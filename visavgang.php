@@ -14,7 +14,10 @@
 
 <body>
     <form method="post" onSubmit="return validering()">
+        <div class="tooltip">
         Avganger <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
+        <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+        </div>
         </br></br>
         <input type="submit" value="Søk" id="fortsett" name="fortsett" onClick="fjernMelding2()"/>
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
@@ -30,11 +33,11 @@
         $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygnin.txt";
         $filoperasjon="r";
         $fil=fopen($filnavn, $filoperasjon);
-        while($linje=fgets($fil)) {
+        while ($linje=fgets($fil)) {
             if ($linje !="") {
                 $del=explode("  ", $linje);
                 $fra=trim($del[1]);
-                if($fra==$avganger) {
+                if ($fra==$avganger) {
                     $flightnr=trim($del[0]);
                     $til=trim($del[2]);
                     $dato=trim($del[3]);
