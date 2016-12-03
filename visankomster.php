@@ -11,11 +11,12 @@
 
 <form method="post" onsubmit="return validering()">
 <div class="tooltip">
-Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" /> <br />
+Ankomster <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onKeyUp="vis(this.value)" />
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
-<input type="submit" value="fortsett" id="fortsett" name="fortsett"/> <br />
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br />
+</br>
+<input type="submit" value="Fortsett" id="fortsett" name="fortsett"/> <br>
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/> <br>
 
 
 </form>
