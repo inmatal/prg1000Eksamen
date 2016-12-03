@@ -10,13 +10,13 @@ while ($linje=fgets($fil)) {
     if ($linje !="") {
         $del=explode("  ", $linje);
         $flightnr=$del[0];
-        $fra=$del[1];
+        $avganger=$del[1];
         $til=$del[2];
         $dato=$del[3];
 
-        $startpos=stripos($fra, $delflyplasskode);
+        $startpos=stripos($avganger, $delflyplasskode);
         if ($startpos!==false) {
-            print("<tr><td>$fra</td><td>$til</tr></td><br>");
+            print("<tr><td>$avganger</td><td>$til</tr></td><br>");
         }
     }
 }

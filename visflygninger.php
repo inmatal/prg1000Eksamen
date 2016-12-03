@@ -34,11 +34,11 @@ if ($fortsett) {
         if ($linje != "") {
             $del      = explode("  ", $linje);
             $flightnr = $del[0];
-            $fra      = $del[1];
+            $avganger      = $del[1];
             $til      = $del[2];
             $dato     = $del[3];
 
-            print("<tr><td>$flightnr</td> <td>$fra</td> <td>$til</td> <td>$dato</td></tr>");
+            print("<tr><td>$flightnr</td> <td>$avganger</td> <td>$til</td> <td>$dato</td></tr>");
         }
     }
 

@@ -12,7 +12,7 @@
     <body>
         <form method="post" onSubmit="return validering1()">
             <div class="tooltip">
-                Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
+                avganger flyplass <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
             </div>
             <br>
@@ -31,16 +31,16 @@
 
     if ($fortsett) {
         $til=$_POST ["til"];
-        $fra=$_POST["fra"];
-        if (!$til || !$fra) {
+        $avganger=$_POST["avganger"];
+        if (!$til || !$avganger) {
             print("Begge feltene må fylles ut");
         } else {
             $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
             $filoperasjon="a";
             $fil=fopen($filnavn, $filoperasjon);
-            $linje=$til."  ".$fra."\n";
+            $linje=$til."  ".$avganger."\n";
             fwrite($fil, $linje);
-            print("$til $fra er registrert");
+            print("$til $avganger er registrert");
             fclose($fil);
         }
     }

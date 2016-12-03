@@ -23,7 +23,7 @@
 @$fortsett=$_POST ["fortsett"];
 if ($fortsett) {
     $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-    $filoperasjon="r"; /*read=lese fra fil*/
+    $filoperasjon="r"; /*read=lese avganger fil*/
 
 print("Flyplasser som er registret: <br/><br/>");
 
