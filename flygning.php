@@ -24,12 +24,12 @@ Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" 
 </div>
 <br>
 <div class="tooltip">
-Avganger <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+Fra <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
-Ankomst <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+Til <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
