@@ -47,10 +47,6 @@ function validering1() {
         feilmelding = feilmelding + "Fra er ikke fylt ut riktig<br />";
     }
 
-    if (fra) {
-        document.write("Fra er korrekt fylt ut ")
-    }
-
     if (!regexToUse.test(til)) {
         lovligtil = false;
         feilmelding = feilmelding + "Til er ikke fylt ut riktig<br />";
