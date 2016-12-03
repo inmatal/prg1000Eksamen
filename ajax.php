@@ -6,8 +6,10 @@ $fil= fopen($filnavn, $filoperasjon);
 
 print ("<table>");
 
-while ($linje=fgets($fil)) {
-    if ($linje !="") {
+while ($linje=fgets($fil))
+{
+    if ($linje !="")
+    {
         $del=explode("  ", $linje);
         $flightnr=$del[0];
         $avganger=$del[1];
@@ -15,7 +17,8 @@ while ($linje=fgets($fil)) {
         $dato=$del[3];
 
         $startpos=stripos($avganger, $delflyplasskode);
-        if ($startpos!==false) {
+        if ($startpos!==false)
+        {
             print("<tr><td>$avganger</td><td>$ankomst</tr></td><br>");
         }
     }
