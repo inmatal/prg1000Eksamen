@@ -68,35 +68,40 @@ if ($fortsett) {
     if (!$flyplasskode || !$flyplassnavn) {
         print("Begge feltene må fylles ut");
     } else {
+      $errorMessage = "";
         $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
         $filoperasjon="a";
 
         $fileContents = file_get_contents($filnavn);
-
+        $fil=fopen($filnavn, $filoperasjon);
         $lines = explode("\n", $fileContents);
 
         $existsAlready = false;
-        $errorMessage = "";
         foreach ($lines as $line) {
-            if ($line == $flyplasskode) {
-                $existsAlready = true;
-                $errorMessage = "Flyplasskoden eksisterer!";
+          $splitLine = explode(" ", $line);
+            if ($splitLine[0] === $flyplasskode) {
+                $errorMessage = $flyplasskode."Flyplasskoden eksisterer!";
                 break;
-            } else {
-                $fil=fopen($filnavn, $filoperasjon);
-                $linje=$flyplasskode."  ".$flyplassnavn."\n";
-                fwrite($fil, $linje);
-                print("$flyplasskode $flyplassnavn er registrert");
-                fclose($fil);
             }
+        }
+
+        if (count($errorMessage) > 0) {
+          print($errorMessage);
+        } else {
+          $linje=$flyplasskode."  ".$flyplassnavn."\n";
+          fwrite($fil, $linje);
+          print("$flyplasskode $flyplassnavn er registrert");
+          fclose($fil);
         }
     }
 }
 
-
-
-
 ?>
+
+
+
+
+
 
 </br>
 
