@@ -15,6 +15,14 @@ function validering() {
         lovligflyplasskode = false;
         feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
     }
+    if (!regexToUse.test(fra)) {
+        lovligflyplasskode = false;
+        feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
+    }
+    if (!regexToUse.test(til)) {
+        lovligflyplasskode = false;
+        feilmelding = feilmelding + "Flyplasskode er ikke fylt ut riktig<br />";
+    }
 
     if (lovligflyplasskode) {
         return true;
