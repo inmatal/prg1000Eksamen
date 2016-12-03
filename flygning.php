@@ -39,7 +39,7 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 </div>
 <br>
 <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding1()"/>
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
 
 </form>
 

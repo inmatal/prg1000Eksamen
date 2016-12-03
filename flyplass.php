@@ -32,7 +32,7 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 </div>
 <br>
 <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding1()"/>
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
 
 </form>
 <?php
