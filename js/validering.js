@@ -1,4 +1,4 @@
-: function validering() {
+function validering() {
     var flyplasskode = document.getElementById("flyplasskode").value;
     var tegn1,
         tegn2,
@@ -29,12 +29,14 @@
   }
 
 
-: function validering1() {
+function validering1() {
     var fra = document.getElementById("fra").value;
+    var til = document.getElementById("til").value;
     var tegn1,
         tegn2,
         tegn3;
     var lovligfra = true;
+    var lovligtil = true;
 
     var feilmelding = "";
 
@@ -57,18 +59,6 @@
     if (fra) {
         document.write("Fra er korrekt fylt ut ")
     }
-}
-
-: function validering2() {
-    var til = document.getElementById("til").value;
-    var tegn1,
-        tegn2,
-        tegn3;
-    var lovligtil = true;
-
-    var feilmelding = "";
-
-    var regexToUse = /^[a-zA-Z]{3}$/;
 
     if (!regexToUse.test(til)) {
         lovligtil = false;
@@ -87,4 +77,5 @@
     if (til) {
         document.write("Til er korrekt fylt ut ")
     }
+
 }
