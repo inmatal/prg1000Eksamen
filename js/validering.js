@@ -1,5 +1,7 @@
 function validering() {
     var flyplasskode = document.getElementById("flyplasskode").value;
+    var fra = document.getElementById("fra").value;
+    var til = document.getElementById("til").value;
     var tegn1,
         tegn2,
         tegn3;
