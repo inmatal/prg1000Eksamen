@@ -10,19 +10,19 @@
         <script src="js/validering.js"></script>
     </head>
     <body>
-        <form method="post" onSubmit="return validering()">
+        <form method="post" onSubmit="return validering1()">
             <div class="tooltip">
-                Fra flyplass <input type="text" id="flyplasskode" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
+                Avganger <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)"/>
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
             </div>
             <br>
             <div class="tooltip">
-                Til flyplass <input type="text" id="flyplasskode" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+                Ankomst <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
             </div>
             <br>
-            <input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>
-            <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+            <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
+            <input type="reset" value="Nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/>
         </form>
     </br>
 
@@ -30,17 +30,17 @@
     @$fortsett=$_POST ["fortsett"];
 
     if ($fortsett) {
-        $til=$_POST ["til"];
-        $fra=$_POST["fra"];
-        if (!$til || !$fra) {
+        $ankomst=$_POST ["ankomst"];
+        $avganger=$_POST["avganger"];
+        if (!$ankomst || !$avganger) {
             print("Begge feltene må fylles ut");
         } else {
             $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
             $filoperasjon="a";
             $fil=fopen($filnavn, $filoperasjon);
-            $linje=$til."  ".$fra."\n";
+            $linje=$ankomst."  ".$avganger."\n";
             fwrite($fil, $linje);
-            print("$til $fra er registrert");
+            print("$ankomst $avganger er registrert");
             fclose($fil);
         }
     }
@@ -48,7 +48,5 @@
 
         <div id="melding1"></div>
         <div id="melding"></div>
-        <div id="melding3"></div>
-        <div id="melding2"></div>
     </body>
 </html>

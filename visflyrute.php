@@ -23,7 +23,7 @@
 @$fortsett=$_POST ["fortsett"];
 if ($fortsett) {
     $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
-    $filoperasjon="r"; /*read=lese fra fil*/
+    $filoperasjon="r"; /*read=lese avganger fil*/
 
 print("Flyruter som er registret: <br/><br/>");
 
@@ -31,17 +31,17 @@ print("Flyruter som er registret: <br/><br/>");
 
 print("<table>");
 
-    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
+    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt ankomst den ikke finner mer, da blir betingelsen usann og stopper*/
 
 
 {
 
 if ($linje !="") {
     $del=explode("  ", $linje);
-    $til=$del[0];
-    $fra=$del[1];
+    $ankomst=$del[0];
+    $avganger=$del[1];
 
-    print("<tr><td>$til</td> <td>$fra</td></tr>");
+    print("<tr><td>$ankomst</td> <td>$avganger</td></tr>");
 }
 
 }

@@ -31,8 +31,8 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 <span class="tooltiptext">Skriv inn flyplassnavn her</span>
 </div>
 <br>
-<input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+<input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
+<input type="reset" value="Nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/>
 
 </form>
 <?php

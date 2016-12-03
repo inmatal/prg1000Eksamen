@@ -23,7 +23,7 @@
 @$fortsett=$_POST ["fortsett"];
 if ($fortsett) {
     $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-    $filoperasjon="r"; /*read=lese fra fil*/
+    $filoperasjon="r"; /*read=lese avganger fil*/
 
 print("Flyplasser som er registret: <br/><br/>");
 
@@ -31,7 +31,7 @@ print("Flyplasser som er registret: <br/><br/>");
 
 print("<table>");
 
-    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt til den ikke finner mer, da blir betingelsen usann og stopper*/
+    while ($linje= fgets($fil)) /*while taggen trenger ikke oppgitt antall repitisjoner, men det gjør for taggen. fgets leser hvert linje skift helt ankomst den ikke finner mer, da blir betingelsen usann og stopper*/
 
 
 {

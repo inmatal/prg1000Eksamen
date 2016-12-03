@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <form method="post" onSubmit="return validering()">
+    <form method="post" onSubmit="return validering2()">
         Avganger <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
         </br></br>
-        <input type="submit" value="Søk" id="fortsett" name="fortsett" onClick="fjernMelding2()"/>
-        <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+        <input type="submit" value="Søk" id="fortsett" name="fortsett"/>
+        <input type="reset" value="Nullsankomstl" id="nullsankomstl" name="nullsankomstl" onClick="fjernMelding()"/>
     </form>
     </br>
 
@@ -55,9 +55,9 @@
                 $fra=trim($del[1]);
                 if($fra==$avganger) {
                     $flightnr=trim($del[0]);
-                    $til=trim($del[2]);
+                    $ankomst=trim($del[2]);
                     $dato=trim($del[3]);
-                    print("<tr><td>$til</td><td>$filghtnr</td><td>$dato</td></tr>");
+                    print("<tr><td>$ankomst</td><td>$filghtnr</td><td>$dato</td></tr>");
                 }
             }
         }
