@@ -47,11 +47,11 @@ function validering() {
 
       if (!regexToUse.test(avganger)) {
           lovligavganger = false;
-          feilmelding = feilmelding + "avganger er ikke fylt ut riktig<br />";
+          feilmelding = feilmelding + "Avganger er ikke fylt ut riktig<br />";
       }
       if (!regexToUse.test(ankomst)) {
           lovligavganger = false;
-          feilmelding = feilmelding + "ankomst er ikke fylt ut riktig<br />";
+          feilmelding = feilmelding + "Ankomst er ikke fylt ut riktig<br />";
       }
 
 
