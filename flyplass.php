@@ -71,9 +71,7 @@ if ($fortsett) {
     }
 }
 
-foreach ($variable as $key => $value) {
-    # code...
-}
+
 
 
 
