@@ -57,7 +57,9 @@
     if (fra) {
         document.write("Fra er korrekt fylt ut ")
     }
+}
 
+: function validering2() {
     var til = document.getElementById("til").value;
     var tegn1,
         tegn2,
