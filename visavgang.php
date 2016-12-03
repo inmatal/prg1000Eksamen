@@ -7,9 +7,9 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <head>
-    <title>avganger</title>
+    <title>Avganger</title>
     <script src="js/hendelser2.js"></script>
-    <script src="js/validering1.js"></script>
+    <script src="js/validering.js"></script>
 </head>
 
 <body>
@@ -67,8 +67,6 @@
     }
 
     ?>
-
-    <div id="melding2"></div>
     <div id="melding1"></div>
     <div id="melding"></div>
 </body>
