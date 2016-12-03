@@ -11,6 +11,7 @@ header {
   background: black;
   line-height: 60px;
   color: white;
+  position: auto;
 }
 
 #nav {
@@ -19,6 +20,7 @@ header {
   height: 607px;
   background: white;
     border-right: 1px solid gray;
+    position: auto;
 
 }
 
@@ -60,7 +62,7 @@ footer {
   font-weight: 400;
   height: 30px;
   line-height: 30px;
-  margin: fixed;
+  position: auto;
 
 }
 
