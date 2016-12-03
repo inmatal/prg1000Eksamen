@@ -26,7 +26,10 @@
     if (flyplasskode) {
         document.write("Flyplasskode er korrekt fylt ut ")
     }
+  }
 
+
+: function validering1() {
     var fra = document.getElementById("fra").value;
     var tegn1,
         tegn2,
