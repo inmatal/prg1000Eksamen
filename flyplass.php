@@ -102,7 +102,6 @@ if ($fortsett) {
 
 
 
-
 </br>
 
 <div id="melding1"></div>
