@@ -14,7 +14,7 @@
 
 <body>
     <div class="tooltip">
-    <form method="post" onSubmit="return validering1()">
+    <form method="post" onSubmit="return validering()">
         Avganger <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onmouseover="musover(this)" onmouseout="musut(this)" onKeyUp="vis(this.value)" />
         <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
         </div>
