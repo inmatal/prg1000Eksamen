@@ -20,22 +20,22 @@
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn flightnr her</span>
 </div>
 <br>
 <div class="tooltip">
 Fra flyplass <input type="text" id="fra" name="fra" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
 Til flyplass <input type="text" id="til" name="til" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
 Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn dato her</span>
 </div>
 <br>
 <input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>

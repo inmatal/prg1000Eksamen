@@ -23,12 +23,12 @@
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
 Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplass her</span>
+<span class="tooltiptext">Skriv inn flyplassnavn her</span>
 </div>
 <br>
 <input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>
