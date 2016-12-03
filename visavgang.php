@@ -33,9 +33,9 @@
             if ($linje !="") {
                 $del = explode("  ", $linje);
                 $flyplasskode = trim($del[0]);
-                if(strtoupper($fra) == strtoupper($avganger)) {
+                if(strtoupper($avganger) == strtoupper($avganger)) {
                     $flyplass = trim($del[1]);
-                    print("Avganger fra flyplass $flyplass");
+                    print("Avganger avganger flyplass $flyplass");
                 }
             }
         }
@@ -52,8 +52,8 @@
         while($linje=fgets($fil)) {
             if ($linje !="") {
                 $del=explode("  ", $linje);
-                $fra=trim($del[1]);
-                if($fra==$avganger) {
+                $avganger=trim($del[1]);
+                if($avganger==$avganger) {
                     $flightnr=trim($del[0]);
                     $ankomst=trim($del[2]);
                     $dato=trim($del[3]);
