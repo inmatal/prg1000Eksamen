@@ -38,8 +38,8 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 <span class="tooltiptext">Skriv inn dato her</span>
 </div>
 <br>
-<input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+<input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
+<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding1()"/>
 
 </form>
 

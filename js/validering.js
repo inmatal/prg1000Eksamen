@@ -1,3 +1,8 @@
+function fjernMelding()
+{
+	document.getElementById("melding1").innerHTML="";
+}
+
 function validering() {
     var flyplasskode = document.getElementById("flyplasskode").value;
     var tegn1,

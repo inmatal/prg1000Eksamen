@@ -21,8 +21,8 @@
                 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
             </div>
             <br>
-            <input type="submit" value="Fortsett" id="fortsett" name="fortsett" onClick="fjernMelding1()"/>
-            <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+            <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
+            <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding1()"/>
         </form>
     </br>
 
