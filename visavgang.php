@@ -49,63 +49,33 @@
     <div id="melding"></div>
 
     <?php
-    if (isset($_POST["fortsett"])) {
-        if (!$_POST['flyplasskode']){
-            print("Det m&aring fylles ut flyplasskode");
-        } else {
-            print("<table>");
-            print("<tr><th>Flightnr</th><th>Til</th><th>Avgangsdato</th></tr>");
-            $sokeord=$_POST["flyplasskode"];
-            $sokeord=trim(strtoupper($sokeord)); /*trim fjerner mellomrom først og sist itekst     strengen*/
-            $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
-            $filoperasjon="r";
-            $fil=fopen($filnavn, $filoperasjon);
-            while($linje=fgets($fil)) {
-                if ($linje !="") {
-                    $del=explode("  ", $linje);
-                    $avganger=trim(strtoupper($del[1]));
-                    if($avganger==$sokeord) {
-                        $flightnr=trim(strtoupper($del[0]));
-                        $ankomst=trim(strtoupper($del[2]));
-                        $dato=trim(strtoupper($del[3]));
-                        print("<tr><td>$ankomst</td><td>$flightnr</td><td>$dato</td></tr>");
+        if (isset($_POST["fortsett"])) {
+            if ($_POST['flyplasskode'] == ""){
+                print("Det m&aring fylles ut flyplasskode");
+            } else {
+                print("<table>");
+                print("<tr><th>Flightnr</th><th>Til</th><th>Avgangsdato</th></tr>");
+                $sokeord=$_POST["flyplasskode"];
+                $sokeord=trim(strtoupper($sokeord)); /*trim fjerner mellomrom først og sist itekst  strengen*/
+                $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
+                $filoperasjon="r";
+                $fil=fopen($filnavn, $filoperasjon);
+                while($linje=fgets($fil)) {
+                    if ($linje !="") {
+                        $del=explode("  ", $linje);
+                        $avganger=trim(strtoupper($del[1]));
+                        if($avganger==$sokeord) {
+                            $flightnr=trim(strtoupper($del[0]));
+                            $ankomst=trim(strtoupper($del[2]));
+                            $dato=trim(strtoupper($del[3]));
+                            print("<tr><td>$ankomst</td><td>$flightnr</td><td>$dato</td></tr>");
+                        }
                     }
                 }
-            }
-            fclose($fil);
-            print("</table>");
-        }
-<<<<<<< HEAD
-=======
-        fclose($fil);
-
-    }
-    */
-
-    if (isset($_POST["fortsett"])) {
-        print("<table>");
-        $sokeord=$_POST["flyplasskode"];
-        $sokeord=trim(strtoupper($sokeord)); /*trim fjerner mellomrom først og sist i tekst strengen*/
-        $filnavn="D:\\Sites//home.hbv.no/phptemp/web-prg10v06/flygning.txt";
-        $filoperasjon="r";
-        $fil=fopen($filnavn, $filoperasjon);
-        while($linje=fgets($fil)) {
-            if ($linje !="") {
-                $del=explode("  ", $linje);
-                $avganger=trim(strtoupper($del[1]));
-                if($avganger==$sokeord) {
-                    $flightnr=trim(strtoupper($del[0]));
-                    $ankomst=trim(strtoupper($del[2]));
-                    $dato=trim(strtoupper($del[3]));
-                    print("<tr><td>$ankomst</td><td>$flightnr</td><td>$dato</td></tr>");
-                }
+                fclose($fil);
+                print("</table>");
             }
         }
-        fclose($fil);
-        print("</table>");
->>>>>>> 38e0b1d3a7b14c93f653508744dbc502f0b5839f
-    }
-
     ?>
 </body>
 <footer>
