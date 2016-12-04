@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="no">
-
+<head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/design.css">
 
 
-<head>
+
 <title>Registrer Flyplass</title>
 
 <script src="js/hendelser2.js"></script>
@@ -43,7 +43,7 @@
 
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
-Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
+Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)"  />
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
 </div>
 <br>
@@ -59,7 +59,7 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 
 <?php
 
-@$fortsett=$_POST ["fortsett"];
+$fortsett=$_POST ["fortsett"];
 
 if ($fortsett) {
     $flyplasskode=$_POST ["flyplasskode"];
@@ -102,7 +102,7 @@ if ($fortsett) {
 
 
 
-</br>
+<br>
 
 <div id="melding1"></div>
 <div id="melding"></div>
