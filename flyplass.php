@@ -22,6 +22,7 @@
 <div id="nav">
   <ul>
     <li><a href="index.html">Gruppe 6 </a> </li>
+    <li>Flyplass</li>
     <li><a href="flyplass.php">Registrere flyplass </a> </li>
       <li><a href="visflyplass.php">Vise flyplasser</a> </li>
         <li><a href="flyrute.php">Registrere flyrute </a> </li>
