@@ -83,6 +83,8 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
         $ankomst= $_POST["ankomst"];
         $dato=$_POST["dato"];
 
+        $lovligDato=true;
+
         if (!$flightnr) {
             print("Flightnr må fylles ut<br>");
         }
@@ -95,14 +97,43 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
             print("ankomst må fylles ut<br>");
         }
 
-        if (!$dato) {
-            print("Dato må fylles ut<br>");
+        if (!$dato)
+  			{
+  			$lovligDato=false;
+  			print ("Dato må fylles ut<br>");
+  			}
+
+  			elseif (strlen($dato)!=10)
+  			{
+  				$lovligDato=false;
+  				print("Dato skal bestå av 10 tegn<br>");
+  			}
+        else {
+          $tegn1=substr($dato,0,1);
+          $tegn2=substr($dato,1,1);
+          $tegn3=substr($dato,2,1);
+          $tegn4=substr($dato,3,1);
+          $tegn5=substr($dato,4,1);
+          $tegn6=substr($dato,5,1);
+          $tegn7=substr($dato,6,1);
+          $tegn8=substr($dato,7,1);
+          $tegn9=substr($dato,8,1);
+          $tegn10=substr($dato,9,1);
+
+
+          if ($tegn1 <"0" || $tegn1 >"9" || $tegn2 <"0" || $tegn2 >"9" || $tegn3 !="-" || $tegn4 <"0" || $tegn4 >"9" || $tegn5 <"0" || $tegn5 >"9" ||
+          $tegn6 !="-" || $tegn7 <"0" || $tegn7 >"9" || $tegn8 <"0" || $tegn8 >"9" || $tegn9 <"0" || $tegn9 >"9" || $tegn10 <"0" || $tegn10 >"9" )
+          {
+            $lovligDato=false;
+            print ("Dato skal ha formatet 00-00-0000");
+          }
+
         }
 
 
 
 
-        if ($flightnr && $avganger && $ankomst && $dato) {
+        if ($flightnr && $avganger && $ankomst && $dato && $lovligDato) {
             $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
             $filoperasjon="a";
 
