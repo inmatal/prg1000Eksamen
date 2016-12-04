@@ -76,7 +76,7 @@ Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikke
 
 <?php
 
-    $fortsett=$_POST ["fortsett"];
+    @$fortsett=$_POST ["fortsett"];
     if ($fortsett) {
         $flightnr=$_POST["flightnr"];
         $avganger=$_POST["avganger"];
