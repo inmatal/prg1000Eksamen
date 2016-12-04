@@ -21,16 +21,16 @@
 
 <div id="nav">
   <ul>
-    <li><a href="index.html">Gruppe 6 </a> </li>
-    <li>Flyplass</li>
-    <li><a href="flyplass.php">Registrere flyplass </a> </li>
-      <li><a href="visflyplass.php">Vise flyplasser</a> </li>
-        <li><a href="flyrute.php">Registrere flyrute </a> </li>
-          <li><a href="visflyrute.php">Vise flyruter</a> </li>
-            <li><a href="flygning.php">Registrere flygninger</a> </li>
-              <li><a href="visflygninger.php">Vise flygninger</a> </li>
-                <li><a href="visavgang.php">Vise avganger</a> </li>
-                  <li><a href="visankomster.php">Vise ankomster</a> </li>
+    <li><a href="index.html">Hjem</a> </li>
+      <h1>Flyplass</h1>
+        <li><a href="flyplass.php">Registrere flyplass </a> </li>
+          <li><a href="visflyplass.php">Vise flyplasser</a> </li>
+            <li><a href="flyrute.php">Registrere flyrute </a> </li>
+              <li><a href="visflyrute.php">Vise flyruter</a> </li>
+                <li><a href="flygning.php">Registrere flygninger</a> </li>
+                  <li><a href="visflygninger.php">Vise flygninger</a> </li>
+                    <li><a href="visavgang.php">Vise avganger</a> </li>
+                      <li><a href="visankomster.php">Vise ankomster</a> </li>
 
   </ul>
 </div>
