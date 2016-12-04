@@ -3,7 +3,7 @@
 <html lang="no">
 
 <meta charset="UTF-8">
-
+  <link rel="stylesheet" href="css/design.css">
 <head>
 <title>Vis flygninger</title>
 </head>
