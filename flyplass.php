@@ -68,45 +68,6 @@ if ($fortsett) {
     if (!$flyplasskode || !$flyplassnavn) {
         print("Begge feltene må fylles ut");
     } else {
-      $errorMessage = "";
-        $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-        $filoperasjon="a";
-
-        $fileContents = file_get_contents($filnavn);
-        $fil=fopen($filnavn, $filoperasjon);
-        $lines = explode("\n", $fileContents);
-
-        $existsAlready = false;
-        foreach ($lines as $line) {
-          $splitLine = explode("  ", $line);
-            if ($splitLine[0] === $flyplasskode) {
-                $errorMessage = $flyplasskode."Flyplasskoden eksisterer!";
-                break;
-            }
-        }
-
-        if (count($errorMessage) > 0) {
-          print($errorMessage);
-        } else {
-          $linje=$flyplasskode."  ".$flyplassnavn."\n";
-          fwrite($fil, $linje);
-          print("$flyplasskode $flyplassnavn er registrert");
-          fclose($fil);
-        }
-    }
-}
-
-<?php
-
-$fortsett=$_POST ["fortsett"];
-
-if ($fortsett) {
-    $flyplasskode=$_POST ["flyplasskode"];
-    $flyplassnavn=$_POST["flyplassnavn"];
-
-    if (!$flyplasskode || !$flyplassnavn) {
-        print("Begge feltene må fylles ut");
-    } else {
         $errorMessage = "";
         $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
         $filoperasjon="a";
