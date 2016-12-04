@@ -11,7 +11,7 @@
 
 <body>
 
-	<center><header>Eksamen</header></center>
+<center><header>Eksamen</header></center>
 
 <div id="nav">
   <ul>
