@@ -55,39 +55,33 @@
             $time = strtotime($input);
             $is_valid = date($date_format, $time) == $input;
 
-            if (!$is_valid==$input)
-            {
+            if (!$is_valid==$input) {
                 print ("Dato er ikke gyldig");
             } elseif ($is_valid == $input) {
                 $errorMessage = "";
                 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
-                $filoperasjon="a";
-
-                $fileContents = file_get_contents($filnavn);
+                $filoperasjon="a+";
                 $fil=fopen($filnavn, $filoperasjon);
+                $fileContents = file_get_contents($filnavn);
                 $lines = explode("\n", $fileContents);
 
                 $existsAlready = false;
                 foreach ($lines as $line) {
                     $splitLine = explode(" ", $line);
                     if ($splitLine[0] === $flightnr) {
-                        $errorMessage = $flightnr."flightnrn eksisterer!";
+                        $errorMessage = $flightnr."Flightnrn eksisterer!";
                         break;
                     }
                 }
 
-                if (count($errorMessage) > 0) {
+                if ($errorMessage != "") {
                     print($errorMessage);
                 } else {
-                    $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
-                    $filoperasjon="a";
-                    $fil= fopen($filnavn, $filoperasjon);
-                    $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
-
+                    $linje = $flightnr."  ".$avganger."  ".$ankomst."  ".$dato."\n";
                     fwrite($fil, $linje) ;
                     print("$flightnr $avganger $ankomst $dato er nå registrert");
-                    fclose($fil);
                 }
+                fclose($fil);
             }
         }
     ?>

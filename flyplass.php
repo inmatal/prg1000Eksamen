@@ -34,7 +34,7 @@
             } else {
                 $errorMessage = "";
                 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-                $filoperasjon="a";
+                $filoperasjon="a+";
 
                 $fileContents = file_get_contents($filnavn);
                 $fil=fopen($filnavn, $filoperasjon);
@@ -49,14 +49,14 @@
                     }
                 }
 
-                if (count($errorMessage) > 0) {
+                if ($errorMessage != "") {
                     print($errorMessage);
                 } else {
                     $linje=$flyplasskode."  ".$flyplassnavn."\n";
                     fwrite($fil, $linje);
                     print("$flyplasskode $flyplassnavn er registrert");
-                    fclose($fil);
                 }
+                fclose($fil);
             }
         }
     ?>
