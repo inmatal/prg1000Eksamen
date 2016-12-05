@@ -33,29 +33,32 @@
                 print("Begge feltene må fylles ut");
             } else {
                 $errorMessage = "";
-                $filnavn = "D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
-                $filoperasjon = "a+";
-                $fil = fopen($filnavn, $filoperasjon);
+                $filnavn="flyplass.txt";
+                $filoperasjon="r"; /*read=lese avganger fil*/
                 $fileContents = file_get_contents($filnavn);
+                $fil=fopen($filnavn, $filoperasjon); /*Åpne*/
                 $lines = explode("\n", $fileContents);
 
-                $existsAlready = false;
-                $flyrute = "$avgang  $ankomst";
+                while ($linje = fgets($fil)){
+                    if ($linje !="") {
+                      $del = explode("  ", $linje);
+                      $flyplasskode = $del[0];
+                      $flyplassnavn = $del[1];
+                    }
 
-                foreach ($lines as $line) {
-                    //  $splitLine = explode(" ", $line);
-                    if ($lines  ===  $avgang."  ".$ankomst."\n") {
-                        $errorMessage = "$flyrute flyruten eksisterer allerede!";
-                        break;
+                    if ($ankomst != $flyplasskode) {
+                        print ("Flyplasskoden eksisterer ikke!");
+                    } else {
+                        $filnavn="flyrute.txt";
+                        $filoperasjon="a";
+                        $fil=fopen($filnavn, $filoperasjon);
+                        $linje=$ankomst."  ".$avganger."\n";
+                        fwrite($fil, $linje);
+                        print("$ankomst $avganger er registrert");
+                        fclose($fil);
                     }
                 }
-                if ($errorMessage != "") {
-                    print($errorMessage);
-                } else {
-                    $linje = $avgang."  ".$ankomst."\n";
-                    fwrite($fil, $linje);
-                    print("$avgang $ankomst er registrert");
-                }
+
                 fclose($fil);
             }
         }
