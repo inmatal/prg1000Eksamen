@@ -45,21 +45,24 @@
                       $flyplasskode = $del[0];
                       $flyplassnavn = $del[1];
                     }
+                    fclose($fil);
 
-                    if ($ankomst != $flyplasskode) {
-                        print ("Flyplasskoden eksisterer ikke!");
-                    } else {
+                    if ($avgang === $flyplasskode) {
                         $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
                         $filoperasjon="a";
                         $fil=fopen($filnavn, $filoperasjon);
                         $linje=$ankomst."  ".$avganger."\n";
                         fwrite($fil, $linje);
-                        print("$ankomst $avganger er registrert");
-                        fclose($fil);
+
+                        print("$ankomst $avgang er registrert");
+                        break;
+                    } else {
+                        print ("Flyplasskoden eksisterer ikke!");
+                        break;
                     }
+                    fclose($fil);
                 }
 
-                fclose($fil);
             }
         }
     ?>
