@@ -33,7 +33,7 @@
                 print("Begge feltene må fylles ut");
             } else {
                 $errorMessage = "";
-                $filnavn="flyplass.txt";
+                $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
                 $filoperasjon="r"; /*read=lese avganger fil*/
                 $fileContents = file_get_contents($filnavn);
                 $fil=fopen($filnavn, $filoperasjon); /*Åpne*/
@@ -49,7 +49,7 @@
                     if ($ankomst != $flyplasskode) {
                         print ("Flyplasskoden eksisterer ikke!");
                     } else {
-                        $filnavn="flyrute.txt";
+                        $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyrute.txt";
                         $filoperasjon="a";
                         $fil=fopen($filnavn, $filoperasjon);
                         $linje=$ankomst."  ".$avganger."\n";
