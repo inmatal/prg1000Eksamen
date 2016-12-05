@@ -36,16 +36,10 @@
 </div>
 
 
-
-
-
-
-
-
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
-<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+<span class="tooltiptext">Skriv inn flyplasskode her, skal bestï¿½ av tre store bokstaver</span>
 </div>
 <br>
 <div class="tooltip">
@@ -58,22 +52,19 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 
 </form>
 <?php
-
-@$fortsett=$_POST ["fortsett"];
-
+@$fortsett = $_POST['fortsett'];
 if ($fortsett) {
     $flyplasskode=$_POST ["flyplasskode"];
     $flyplassnavn=$_POST["flyplassnavn"];
 
     if (!$flyplasskode || !$flyplassnavn) {
-        print("Begge feltene må fylles ut");
+        print("Begge feltene mÃ¥ fylles ut");
     } else {
       $errorMessage = "";
-        $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
-        $filoperasjon="a";
-
+        $filnavn = "D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
+        $filoperasjon = "a+";
+        $fil = fopen($filnavn, $filoperasjon);
         $fileContents = file_get_contents($filnavn);
-        $fil=fopen($filnavn, $filoperasjon);
         $lines = explode("\n", $fileContents);
 
         $existsAlready = false;
@@ -84,17 +75,18 @@ if ($fortsett) {
                 break;
             }
         }
-        
-        if (count($errorMessage) > 0) {
+
+        if ($errorMessage != "") {
           print($errorMessage);
         } else {
-          $linje=$flyplasskode."  ".$flyplassnavn."\n";
+          $linje = $flyplasskode."  ".$flyplassnavn."\n";
           fwrite($fil, $linje);
           print("$flyplasskode $flyplassnavn er registrert");
-          fclose($fil);
         }
+        fclose($fil);
     }
 }
+
 
 ?>
 
@@ -108,7 +100,7 @@ if ($fortsett) {
 <div id="melding"></div>
 
 <footer>
-<h4>Laget av gruppe 6, som består av:</h4>
+<h4>Laget av gruppe 6, som bestï¿½r av:</h4>
 </footer>
 
 </body>
