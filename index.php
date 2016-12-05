@@ -1,5 +1,5 @@
 <?php
-  $INC_DIR = $_SERVER["DOCUMENT_ROOT"]. "/web-prg10v06/prg1000Eksamen/inc/"; //legg inn root related path
+  $INC_DIR = $_SERVER["DOCUMENT_ROOT"]. "/web-prg10v06/inc/"; //legg inn root related path
   $title = Null; //use "..." max 60 charaters
   $description = NULL;  // use "..." max 160 characters
 ?>

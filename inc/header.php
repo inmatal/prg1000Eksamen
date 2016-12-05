@@ -16,7 +16,7 @@
 
             <div id="nav">
               <ul>
-                <a href="index.html"><li>Forside</li> </a>
+                <a href="index.php"><li>Forside</li> </a>
                 <a href="flyplass.php"><li>Registrere flyplass</li></a>
                 <a href="visflyplass.php"><li>Vise flyplasser</li></a>
                 <a href="flyrute.php"><li>Registrere flyrute</li></a>
