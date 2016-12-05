@@ -39,7 +39,11 @@
 <form method="post" onSubmit="return validering()">
 <div class="tooltip">
 Flyplasskode <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
+<<<<<<< HEAD
 <span class="tooltiptext">Skriv inn flyplasskode her, skal bestï¿½ av tre store bokstaver</span>
+=======
+<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+>>>>>>> origin/master
 </div>
 <br>
 <div class="tooltip">
@@ -52,12 +56,19 @@ Flyplassnavn <input type="text" id="flyplassnavn" name="flyplassnavn" onfocus="f
 
 </form>
 <?php
+<<<<<<< HEAD
 @$fortsett = $_POST['fortsett'];
+=======
+
+@$fortsett=$_POST ["fortsett"];
+
+>>>>>>> origin/master
 if ($fortsett) {
     $flyplasskode=$_POST ["flyplasskode"];
     $flyplassnavn=$_POST["flyplassnavn"];
 
     if (!$flyplasskode || !$flyplassnavn) {
+<<<<<<< HEAD
         print("Begge feltene mÃ¥ fylles ut");
     } else {
       $errorMessage = "";
@@ -65,6 +76,16 @@ if ($fortsett) {
         $filoperasjon = "a+";
         $fil = fopen($filnavn, $filoperasjon);
         $fileContents = file_get_contents($filnavn);
+=======
+        print("Begge feltene må fylles ut");
+    } else {
+      $errorMessage = "";
+        $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flyplass.txt";
+        $filoperasjon="a";
+
+        $fileContents = file_get_contents($filnavn);
+        $fil=fopen($filnavn, $filoperasjon);
+>>>>>>> origin/master
         $lines = explode("\n", $fileContents);
 
         $existsAlready = false;
@@ -75,6 +96,7 @@ if ($fortsett) {
                 break;
             }
         }
+<<<<<<< HEAD
 
         if ($errorMessage != "") {
           print($errorMessage);
@@ -87,6 +109,19 @@ if ($fortsett) {
     }
 }
 
+=======
+        
+        if (count($errorMessage) > 0) {
+          print($errorMessage);
+        } else {
+          $linje=$flyplasskode."  ".$flyplassnavn."\n";
+          fwrite($fil, $linje);
+          print("$flyplasskode $flyplassnavn er registrert");
+          fclose($fil);
+        }
+    }
+}
+>>>>>>> origin/master
 
 ?>
 
@@ -100,7 +135,11 @@ if ($fortsett) {
 <div id="melding"></div>
 
 <footer>
+<<<<<<< HEAD
 <h4>Laget av gruppe 6, som bestï¿½r av:</h4>
+=======
+<h4>Laget av gruppe 6, som består av:</h4>
+>>>>>>> origin/master
 </footer>
 
 </body>
