@@ -15,12 +15,12 @@
         <br>
         <div class="tooltip">
             Fra <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-            <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+            <span class="tooltiptext">Skriv inn flightnr her, skal bestå av tre store bokstaver</span>
         </div>
         <br>
         <div class="tooltip">
             Til <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-            <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+            <span class="tooltiptext">Skriv inn flightnr her, skal bestå av tre store bokstaver</span>
         </div>
         <br>
         <div class="tooltip">
@@ -34,8 +34,7 @@
     </br>
 
     <?php
-      @$fortsett=$_POST ["fortsett"];
-        if ($fortsett) {
+        if (isset ($_POST['fortsett'])) {
             $flightnr=$_POST["flightnr"];
             $avganger=$_POST["avganger"];
             $ankomst= $_POST["ankomst"];
@@ -59,15 +58,36 @@
             if (!$is_valid==$input)
             {
                 print ("Dato er ikke gyldig");
-            } else {
+            } elseif ($is_valid == $input) {
+                $errorMessage = "";
                 $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
                 $filoperasjon="a";
-                $fil= fopen($filnavn, $filoperasjon);
-                $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
 
-                fwrite($fil, $linje) ;
-                print("$flightnr $avganger $ankomst $dato er nå registrert");
-                fclose($fil);
+                $fileContents = file_get_contents($filnavn);
+                $fil=fopen($filnavn, $filoperasjon);
+                $lines = explode("\n", $fileContents);
+
+                $existsAlready = false;
+                foreach ($lines as $line) {
+                    $splitLine = explode(" ", $line);
+                    if ($splitLine[0] === $flightnr) {
+                        $errorMessage = $flightnr."flightnrn eksisterer!";
+                        break;
+                    }
+                }
+
+                if (count($errorMessage) > 0) {
+                    print($errorMessage);
+                } else {
+                    $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
+                    $filoperasjon="a";
+                    $fil= fopen($filnavn, $filoperasjon);
+                    $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
+
+                    fwrite($fil, $linje) ;
+                    print("$flightnr $avganger $ankomst $dato er nå registrert");
+                    fclose($fil);
+                }
             }
         }
     ?>
