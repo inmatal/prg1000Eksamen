@@ -1,128 +1,77 @@
-<!DOCTYPE html>
-
-<html lang="no">
-
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/design.css">
-
-<head>
-<title>Registrer Flygning</title>
-<script src="js/hendelser.js"></script>
-<script src="js/validering.js"></script>
-
-</head>
-
-<body>
-
-
-    <center><header>Eksamen</header></center>
-
-  <div id="nav">
-    <ul>
-      <li><a href="index.html">Gruppe 6 </a> </li>
-      <li><a href="flyplass.php">Registrere flyplass </a> </li>
-        <li><a href="visflyplass.php">Vise flyplasser</a> </li>
-          <li><a href="flyrute.php">Registrere flyrute </a> </li>
-            <li><a href="visflyrute.php">Vise flyruter</a> </li>
-              <li><a href="flygning.php">Registrere flygninger</a> </li>
-                <li><a href="visflygninger.php">Vise flygninger</a> </li>
-                  <li><a href="visavgang.php">Vise avganger</a> </li>
-                    <li><a href="visankomster.php">Vise ankomster</a> </li>
-
-    </ul>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<form method="post" onSubmit="return validering1()">
-<div class="tooltip">
-Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flightnr her</span>
-</div>
-<br>
-<div class="tooltip">
-Fra <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
-</div>
-<br>
-<div class="tooltip">
-Til <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
-</div>
-<br>
-<div class="tooltip">
-Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikkefarge(this)"/>
-<span class="tooltiptext">Skriv inn dato her</span>
-</div>
-<br>
-<input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
-<input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
-
-</form>
-
-</br>
-
-
 <?php
-
-  @$fortsett=$_POST ["fortsett"];
-  if ($fortsett) {
-    $flightnr=$_POST["flightnr"];
-    $avganger=$_POST["avganger"];
-    $ankomst= $_POST["ankomst"];
-    $dato=$_POST["dato"];
-
-    if (!$flightnr) {
-        print("Flightnr må fylles ut<br>");
-    } elseif (!$avganger) {
-        print("avganger må fylles ut<br>");
-    } elseif (!$ankomst) {
-        print("ankomst må fylles ut<br>");
-    } elseif (!$dato) {
-        print("Dato må fylles ut<br>");
-    }
-
-
-    $date_format = 'Y-m-d';
-    $input = $dato;
-
-    $input = trim($input);
-    $time = strtotime($input);
-
-    $is_valid = date($date_format, $time) == $input;
-
-    if (!$is_valid==$input)
-    {
-      print ("Dato er ikke gyldig");
-    } else {
-      $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
-      $filoperasjon="a";
-      $fil= fopen($filnavn, $filoperasjon);
-      $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
-
-      fwrite($fil, $linje) ;
-      print("$flightnr $avganger $ankomst $dato er nå registrert");
-      fclose($fil);
-    }
-  }
+  $INC_DIR = $_SERVER["DOCUMENT_ROOT"]. "/web-prg10v06/prg1000Eksamen/inc"; //legg inn root related path
+  $title = "Eksamen | Registrer Flygning"; // use "..." max 60 charaters
+  $description = NULL;  // use "..." max 160 characters
 ?>
-<div id="melding1"></div>
-<div id="melding"></div>
+<!--THis is the required php for a fragmented html page to run included files-->
 
-</body>
-<footer>
-<h4>Laget av gruppe 6, som består av:</h4>
-</footer>
+<?php require($INC_DIR. "header.php");?>
+<!--START unique page content-->
+    <form method="post" onSubmit="return validering1()">
+        <div class="tooltip">
+            Flightnr <input type="text" id="flightnr" name="flightnr" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+            <span class="tooltiptext">Skriv inn flightnr her</span>
+        </div>
+        <br>
+        <div class="tooltip">
+            Fra <input type="text" id="avganger" name="avganger" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+            <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+        </div>
+        <br>
+        <div class="tooltip">
+            Til <input type="text" id="ankomst" name="ankomst" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+            <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+        </div>
+        <br>
+        <div class="tooltip">
+            Dato <input type="text" id="dato" name="dato" onfocus="farge(this)" onblur="ikkefarge(this)"/>
+            <span class="tooltiptext">Skriv inn dato her</span>
+        </div>
+        <br>
+        <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
+        <input type="reset" value="Nullstill" id="nullstill" name="nullstill" onClick="fjernMelding()"/>
+    </form>
+    </br>
 
-</html>
+    <?php
+      @$fortsett=$_POST ["fortsett"];
+        if ($fortsett) {
+            $flightnr=$_POST["flightnr"];
+            $avganger=$_POST["avganger"];
+            $ankomst= $_POST["ankomst"];
+            $dato=$_POST["dato"];
+            if (!$flightnr) {
+                print("Flightnr må fylles ut<br>");
+            } elseif (!$avganger) {
+                print("avganger må fylles ut<br>");
+            } elseif (!$ankomst) {
+                print("ankomst må fylles ut<br>");
+            } elseif (!$dato) {
+                print("Dato må fylles ut<br>");
+            }
+
+            $date_format = 'Y-m-d';
+            $input = $dato;
+            $input = trim($input);
+            $time = strtotime($input);
+            $is_valid = date($date_format, $time) == $input;
+
+            if (!$is_valid==$input)
+            {
+                print ("Dato er ikke gyldig");
+            } else {
+                $filnavn="D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v06/flygning.txt";
+                $filoperasjon="a";
+                $fil= fopen($filnavn, $filoperasjon);
+                $linje = $flightnr ."  ". $avganger ."  ". $ankomst."  ". $dato.    "\n";
+
+                fwrite($fil, $linje) ;
+                print("$flightnr $avganger $ankomst $dato er nå registrert");
+                fclose($fil);
+            }
+        }
+    ?>
+    <div id="melding1"></div>
+    <div id="melding"></div>
+<!--END unique page content-->
+<?php require($INC_DIR. "footer.php");?>

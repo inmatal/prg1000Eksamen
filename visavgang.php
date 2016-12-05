@@ -1,43 +1,16 @@
-<!DOCTYPE html>
+<?php
+  $INC_DIR = $_SERVER["DOCUMENT_ROOT"]. "/web-prg10v06/prg1000Eksamen/inc"; //legg inn root related path
+  $title = "Eksamen | Vis Ankomster"; //"..." max 60 charaters
+  $description = NULL;  // use "..." max 160 characters
+?>
+<!--THis is the required php for a fragmented html page to run included files-->
 
-<html lang="no">
-
-<meta charset="UTF-8">
-
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="css/design.css">
-<head>
-    <title>Avganger</title>
-    <script src="js/hendelser2.js"></script>
-    <script src="js/validering.js"></script>
-</head>
-
-<body>
-
-
-  <center><header>Eksamen</header></center>
-
-<div id="nav">
-  <ul>
-    <li><a href="index.html">Gruppe 6 </a> </li>
-    <li><a href="flyplass.php">Registrere flyplass </a> </li>
-      <li><a href="visflyplass.php">Vise flyplasser</a> </li>
-        <li><a href="flyrute.php">Registrere flyrute </a> </li>
-          <li><a href="visflyrute.php">Vise flyruter</a> </li>
-            <li><a href="flygning.php">Registrere flygninger</a> </li>
-              <li><a href="visflygninger.php">Vise flygninger</a> </li>
-                <li><a href="visavgang.php">Vise avganger</a> </li>
-                  <li><a href="visankomster.php">Vise ankomster</a> </li>
-
-  </ul>
-</div>
-
-
-
-    <div class="tooltip">
+<?php require($INC_DIR. "header.php");?>
+<!--START unique page content-->
     <form method="post" onSubmit="return validering()">
-        Avganger <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
-        <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
+        <div class="tooltip">
+            Avganger <input type="text" id="flyplasskode" name="flyplasskode" onfocus="farge(this)" onblur="ikkefarge(this)" onKeyUp="vis(this.value)" />
+            <span class="tooltiptext">Skriv inn flyplasskode her, skal bestå av tre store bokstaver</span>
         </div>
         </br></br>
         <input type="submit" value="Fortsett" id="fortsett" name="fortsett"/>
@@ -77,8 +50,5 @@
             }
         }
     ?>
-</body>
-<footer>
-<h4>Laget av gruppe 6, som består av:</h4>
-</footer>
-</html>
+<!--END unique page content-->
+<?php require($INC_DIR. "footer.php");?>
